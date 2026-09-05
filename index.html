@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hanssen — Minimal Photography & Design Portfolio (Website View)</title>
-  <meta name="description" content="A modern, Scandinavian-inspired portfolio website showcasing handcrafted collections and authentic moments.">
+  <title>Manpreeth N (Manu) — AI Generalist, Full Stack Developer & Founder</title>
+  <meta name="description" content="Official Resume & Portfolio of Manpreeth N (Manu) — Founder of Socialeo, AI Generalist, Full-Stack Web Developer, and Operations Specialist based in Mysore, India.">
   
   <!-- Favicons -->
   <link id="dynamic-favicon" rel="icon" href="assets/images/favicon_light.webp">
@@ -20,33 +20,27 @@
 </head>
 <body>
 
-  <!-- Floating View Helper (Toggle between Hanssen Template & Manpreeth Profile) -->
-  <div class="website-mode-pills">
-    <button class="mode-pill-btn active" id="profile-toggle-hanssen">📷 Hanssen View</button>
-    <button class="mode-pill-btn" id="profile-toggle-manu">👤 Manpreeth View</button>
-  </div>
-
-  <!-- MAIN HORIZONTAL WEBSITE CONTAINER (Matches Images 1, 2, 3) -->
+  <!-- MAIN HORIZONTAL WEBSITE CONTAINER -->
   <main class="website-container" id="website-container">
 
-    <!-- Top Left Integrated Header Bar (Matches Images & Dropdown Reference) -->
+    <!-- Top Left Integrated Header Bar -->
     <nav class="website-nav-bar" id="website-nav-bar">
       <a href="#" class="nav-brand" data-tab="home">
         <span class="nav-brand-dot"></span>
-        <span id="nav-brand-text">Norden</span>
+        <span id="nav-brand-text">Manpreeth</span>
       </a>
 
-      <!-- Status Indicator (Matches Image) -->
+      <!-- Status Indicator -->
       <span class="nav-status-pill">
         <span class="nav-status-dot"></span>
-        Available
+        Available for Roles
       </span>
 
       <ul class="nav-links">
         <li class="nav-link-item"><a href="#" class="active" data-tab="home">Work</a></li>
-        <li class="nav-link-item"><a href="#" data-tab="about">About</a></li>
+        <li class="nav-link-item"><a href="#" data-tab="experience">Experience</a></li>
         <li class="nav-link-item"><a href="#" data-tab="certifications">Certifications</a></li>
-        <li class="nav-link-item"><a href="#" data-tab="blog">Blog</a></li>
+        <li class="nav-link-item"><a href="#" data-tab="about">About</a></li>
         <li class="nav-link-item"><a href="#" data-tab="contact">Contact</a></li>
       </ul>
 
@@ -63,7 +57,7 @@
     </nav>
 
     <!-- ====================================================================
-         SIGNATURE MENU DROPDOWN (Matches User Reference Image Exactly)
+         SIGNATURE MENU DROPDOWN (Matches Reference Exactly)
          ==================================================================== -->
     <div class="menu-dropdown-overlay" id="menu-dropdown-overlay">
       <!-- Top Line: Brand, Theme, Available, Notch Tab, Close -->
@@ -71,7 +65,7 @@
         <div class="menu-dropdown-left">
           <a href="#" class="menu-dropdown-brand" data-tab="home">
             <span class="nav-brand-dot"></span>
-            <span id="dropdown-brand-text">Norden</span>
+            <span id="dropdown-brand-text">Manpreeth</span>
           </a>
 
           <!-- Theme Switcher -->
@@ -97,10 +91,13 @@
       <div class="menu-dropdown-body">
         <div class="menu-dropdown-grid">
           <a href="#" class="menu-dropdown-item active" data-tab="home">Work</a>
-          <a href="#" class="menu-dropdown-item" data-tab="about">About</a>
-          <a href="#" class="menu-dropdown-item" data-tab="certifications">Certifications</a>
-          <a href="#" class="menu-dropdown-item" data-tab="blog">Blog</a>
+          <a href="#" class="menu-dropdown-item" data-tab="experience">Experience & Resume</a>
+          <a href="#" class="menu-dropdown-item" data-tab="certifications">Certifications (6)</a>
+          <a href="#" class="menu-dropdown-item" data-tab="about">About Manpreeth</a>
           <a href="#" class="menu-dropdown-item" data-tab="contact">Contact</a>
+          <a href="https://github.com/Manu-Socialeo" target="_blank" class="menu-dropdown-item" style="color:#60a5fa;">
+            <span>GitHub Profile ↗</span>
+          </a>
           <a href="https://verify.skilljar.com/c/a7obunazytxj" target="_blank" class="menu-dropdown-item" style="color:#22c55e;">
             <span>Notion Verified ↗</span>
           </a>
@@ -109,28 +106,29 @@
     </div>
 
     <!-- ====================================================================
-         VIEW 1: HOME / SELECTED WORK (Matches Image 2 - Light Mode)
+         VIEW 1: HOME / SELECTED WORK
          ==================================================================== -->
     <div class="website-view-tab active" id="tab-home">
       <div class="website-content-grid">
         
         <!-- Left Hero Column: Selected Work Slider -->
         <div class="website-left-col">
-          <img src="assets/images/hanssen_selected_work.jpg" alt="Selected Work Model" class="left-hero-img" id="hero-slider-img">
+          <img src="assets/images/work_hanssen.webp" alt="Selected Work Showcase" class="left-hero-img" id="hero-slider-img">
           
           <!-- Previous & Next Slider Buttons -->
-          <button class="slider-arrow-btn prev" id="slider-prev-btn" aria-label="Previous image">‹</button>
-          <button class="slider-arrow-btn next" id="slider-next-btn" aria-label="Next image">›</button>
+          <button class="slider-arrow-btn prev" id="slider-prev-btn" aria-label="Previous project">‹</button>
+          <button class="slider-arrow-btn next" id="slider-next-btn" aria-label="Next project">›</button>
 
-          <!-- 3 Slider Dots -->
-          <div class="slider-dots-bar">
+          <!-- Slider Dots -->
+          <div class="slider-dots-bar" id="slider-dots-bar">
             <span class="slider-dot active" data-slide="0"></span>
             <span class="slider-dot" data-slide="1"></span>
             <span class="slider-dot" data-slide="2"></span>
+            <span class="slider-dot" data-slide="3"></span>
           </div>
 
-          <!-- Signature Bottom Right Cut-Out Notched Badge -->
-          <div class="tab-corner-badge" id="hero-badge-label">Selected Work</div>
+          <!-- Corner Cut-Out Badge -->
+          <div class="tab-corner-badge" id="hero-badge-label">Socialeo • AI Platform</div>
         </div>
 
         <!-- Right Column: Profile & Latest Work -->
@@ -140,61 +138,57 @@
           <div class="profile-overview-card">
             <div class="profile-card-top">
               <div class="profile-identity">
-                <img src="assets/images/ema_hanssen_avatar.jpg" alt="Creator Avatar" class="profile-avatar-circle" id="creator-avatar">
+                <img src="assets/images/manu_photo.png" alt="Manpreeth N" class="profile-avatar-circle" id="creator-avatar">
                 <div class="profile-titles">
-                  <h2 id="creator-name">Ema Hanssen</h2>
-                  <p id="creator-role">Photographer</p>
+                  <h2 id="creator-name">Manpreeth N</h2>
+                  <p id="creator-role">AI Generalist & Full-Stack Developer</p>
                 </div>
               </div>
 
-              <!-- Social Pills Column -->
+              <!-- Social & Action Pills Column -->
               <div class="social-pills-col">
-                <a href="https://instagram.com" target="_blank" class="social-pill-btn">
-                  <span>Instagram</span>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                <a href="https://github.com/Manu-Socialeo" target="_blank" class="social-pill-btn">
+                  <span>GitHub</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                 </a>
-                <a href="https://pinterest.com" target="_blank" class="social-pill-btn">
-                  <span>Pinterest</span>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12c0 2 1 3 2 3s1-1 1-2c0-2-1-3-2-3"/></svg>
-                </a>
-                <a href="https://behance.net" target="_blank" class="social-pill-btn">
-                  <span>Behance</span>
-                  <span style="font-weight:700; font-size:11px;">Bē</span>
-                </a>
-                <a href="https://twitter.com" target="_blank" class="social-pill-btn">
-                  <span>Twitter</span>
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
-                </a>
-                <a href="#" class="social-pill-btn btn-dark-pill" data-tab="contact">
-                  <span>Contact Me</span>
+                <a href="mailto:manpreeth007@gmail.com" class="social-pill-btn">
+                  <span>Email</span>
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </a>
+                <a href="tel:+918722163256" class="social-pill-btn">
+                  <span>Call: +91 8722163256</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </a>
+                <a href="#" class="social-pill-btn btn-dark-pill" data-tab="experience">
+                  <span>View Resume</span>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
                 </a>
               </div>
             </div>
 
             <p class="profile-bio-text" id="creator-bio">
-              I'm Ema, a photographer based in Prague. I capture authentic moments and tell stories through my images, blending creativity and emotion in each shot.
+              AI Generalist, Full-Stack Web Developer, and Founder of Socialeo based in Mysore, India. Specializing in autonomous AI agent workflows, modern web applications, rapid Vibe Coding, and high-impact operations leadership.
             </p>
           </div>
 
-          <!-- Latest Work 2-Card Row -->
+          <!-- Latest Projects Row -->
           <div class="latest-work-section">
             <div class="latest-work-header">
-              <span>Latest Work ↓</span>
-              <a href="#" data-tab="work-darkness">View All</a>
+              <span>Featured Vibe-Coded Projects ↓</span>
+              <a href="#" data-tab="experience">View Career Timeline →</a>
             </div>
 
             <div class="latest-work-cards-row">
-              <!-- Mini Card 1: Beige -->
-              <div class="mini-work-card" data-tab="work-beige">
-                <div class="tab-corner-badge top-left">Beige</div>
-                <img src="assets/images/hanssen_beige.jpg" alt="Beige Fashion Collection" class="mini-work-img">
+              <!-- Mini Card 1: Socialeo -->
+              <div class="mini-work-card" data-tab="project-socialeo">
+                <div class="tab-corner-badge top-left">Socialeo (AI Suite)</div>
+                <img src="assets/images/work_hanssen.webp" alt="Socialeo Platform" class="mini-work-img">
               </div>
 
-              <!-- Mini Card 2: Darkness (Clicks to open Darkness View) -->
-              <div class="mini-work-card" data-tab="work-darkness">
-                <div class="tab-corner-badge top-left">Darkness</div>
-                <img src="assets/images/hanssen_darkness_1.jpg" alt="Darkness Portrait" class="mini-work-img">
+              <!-- Mini Card 2: Yoga With Srinatha -->
+              <div class="mini-work-card" data-tab="project-yoga">
+                <div class="tab-corner-badge top-left">Yoga With Srinatha</div>
+                <img src="assets/images/work_fjord.webp" alt="Yoga With Srinatha EdTech" class="mini-work-img">
               </div>
             </div>
           </div>
@@ -205,211 +199,72 @@
     </div>
 
     <!-- ====================================================================
-         VIEW 2: DARKNESS PROJECT DETAIL (Matches Image 1 - Dark Mode)
+         VIEW 2: EXPERIENCE / RESUME TIMELINE
          ==================================================================== -->
-    <div class="website-view-tab" id="tab-work-darkness">
+    <div class="website-view-tab" id="tab-experience">
       <div class="website-content-grid">
         
-        <!-- Left Hero Column: Darkness High Fashion Portrait -->
+        <!-- Left Hero Column: Portrait & Quick Resume Stats -->
         <div class="website-left-col">
-          <img src="assets/images/hanssen_darkness_1.jpg" alt="Darkness High-Fashion Editorial" class="left-hero-img">
-          <div class="tab-corner-badge">Darkness</div>
+          <img src="assets/images/manu_photo.png" alt="Manpreeth N Resume" class="left-hero-img">
+          
+          <div class="tab-corner-badge">Resume • Manpreeth N</div>
+
+          <!-- Floating Resume Actions Over Image -->
+          <div style="position:absolute; bottom:60px; left:20px; right:20px; z-index:10; display:flex; flex-direction:column; gap:8px;">
+            <button class="resume-download-btn" onclick="window.print()" style="justify-content:center; backdrop-filter:blur(10px); box-shadow:0 8px 24px rgba(0,0,0,0.3);">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+              <span>Print / Save as PDF Resume</span>
+            </button>
+          </div>
         </div>
 
-        <!-- Right Column: Specs & Second Photo -->
+        <!-- Right Column: Career Timeline & Education -->
         <div class="website-right-col">
           
-          <!-- Top Card: Darkness Description + Spec Table -->
-          <div class="darkness-top-card">
-            <div class="darkness-info-col">
-              <h2>Darkness</h2>
-              <p>A lifestyle photoshoot highlighting authentic, candid moments to evoke a sense of warmth and connection in everyday scenes.</p>
+          <div class="cert-panel-card" style="padding:22px 24px;">
+            <div class="cert-header-top" style="margin-bottom:14px;">
+              <div class="cert-header-titles">
+                <h2>Work Experience & Career Timeline</h2>
+                <p>Full-stack development, autonomous AI workflows, and cross-functional operations.</p>
+              </div>
+              <span class="cert-count-badge">
+                <span class="nav-status-dot"></span>
+                <span>4+ Years Exp</span>
+              </span>
             </div>
 
-            <div class="darkness-specs-table">
-              <div class="darkness-spec-row">
-                <span class="spec-label">Year</span>
-                <span class="spec-value">2024</span>
-              </div>
-              <div class="darkness-spec-row">
-                <span class="spec-label">Client</span>
-                <span class="spec-value">Darkness</span>
-              </div>
-              <div class="darkness-spec-row">
-                <span class="spec-label">Service</span>
-                <span class="spec-value">Commercial</span>
-              </div>
-              <div class="darkness-spec-row">
-                <span class="spec-label">Location</span>
-                <span class="spec-value">Model</span>
-              </div>
+            <!-- Dynamic Experience List Container -->
+            <div class="experience-list-container" id="experience-list-container">
+              <!-- Rendered via JS -->
             </div>
           </div>
 
-          <!-- Bottom Card: Windblown Portrait Image -->
-          <div class="darkness-bottom-img-card">
-            <img src="assets/images/hanssen_darkness_2.jpg" alt="Darkness Windblown Atmosphere" class="darkness-bottom-img">
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-
-    <!-- ====================================================================
-         VIEW 3: BEIGE PROJECT DETAIL
-         ==================================================================== -->
-    <div class="website-view-tab" id="tab-work-beige">
-      <div class="website-content-grid">
-        
-        <div class="website-left-col">
-          <img src="assets/images/hanssen_beige.jpg" alt="Beige Lookbook" class="left-hero-img">
-          <div class="tab-corner-badge">Beige</div>
-        </div>
-
-        <div class="website-right-col">
-          <div class="darkness-top-card">
-            <div class="darkness-info-col">
-              <h2>Beige</h2>
-              <p>An editorial study in neutral tones, relaxed tailoring, and architectural silhouettes shot under soft morning daylight.</p>
-            </div>
-
-            <div class="darkness-specs-table">
-              <div class="darkness-spec-row"><span class="spec-label">Year</span><span class="spec-value">2024</span></div>
-              <div class="darkness-spec-row"><span class="spec-label">Client</span><span class="spec-value">Atelier Beige</span></div>
-              <div class="darkness-spec-row"><span class="spec-label">Service</span><span class="spec-value">Editorial</span></div>
-              <div class="darkness-spec-row"><span class="spec-label">Location</span><span class="spec-value">Prague</span></div>
-            </div>
-          </div>
-
-          <div class="darkness-bottom-img-card">
-            <img src="assets/images/hanssen_selected_work.jpg" alt="Beige Studio Detail" class="darkness-bottom-img">
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- ====================================================================
-         VIEW 4: LET'S TALK / CONTACT (Matches Image 3 - Dark Mode)
-         ==================================================================== -->
-    <div class="website-view-tab" id="tab-contact">
-      <div class="website-content-grid">
-        
-        <!-- Left Column: Full-Height Studio Photo -->
-        <div class="website-left-col">
-          <img src="assets/images/hanssen_studio.jpg" alt="Prague Photography Studio" class="left-hero-img">
-          <div class="tab-corner-badge">My Studio</div>
-        </div>
-
-        <!-- Right Column: Contact Form & Studio Details -->
-        <div class="website-right-col">
-          
-          <!-- Top Form Card -->
-          <div class="contact-top-card">
-            <h2>Let's Talk</h2>
-            <form id="website-contact-form" class="contact-form-grid">
-              <div class="form-inputs-row">
-                <input type="text" id="form-name" class="contact-input" placeholder="Your Name" required>
-                <input type="email" id="form-email" class="contact-input" placeholder="Your Email" required>
-              </div>
-              <textarea id="form-message" class="contact-textarea" placeholder="Your Message" required></textarea>
-              <button type="submit" class="contact-submit-btn">Send Message</button>
-            </form>
-          </div>
-
-          <!-- Bottom 3-Card Row -->
-          <div class="contact-bottom-row">
-            <!-- Studio Address Card -->
-            <div class="studio-address-card">
+          <!-- Education Section Card -->
+          <div class="profile-overview-card" style="padding:16px 20px; margin-top:auto;">
+            <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:12px;">
               <div>
-                <h4>Prague<br>Studio</h4>
-                <p style="margin-top:8px;">Vinohradská 121,<br>130 00 Praha 3,<br>Czech Republic</p>
-              </div>
-              <a href="https://maps.google.com" target="_blank" class="studio-dir-btn">Get Direction ↗</a>
-            </div>
-
-            <!-- Studio Photo Card -->
-            <div class="studio-photo-card">
-              <img src="assets/images/hanssen_studio.jpg" alt="Studio Collaboration">
-            </div>
-
-            <!-- Social Links Column -->
-            <div class="social-pills-col">
-              <a href="https://instagram.com" target="_blank" class="social-pill-btn">
-                <span>Instagram</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/></svg>
-              </a>
-              <a href="https://pinterest.com" target="_blank" class="social-pill-btn">
-                <span>Pinterest</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12c0 2 1 3 2 3s1-1 1-2c0-2-1-3-2-3"/></svg>
-              </a>
-              <a href="https://behance.net" target="_blank" class="social-pill-btn">
-                <span>Behance</span>
-                <span style="font-weight:700; font-size:11px;">Bē</span>
-              </a>
-              <a href="https://twitter.com" target="_blank" class="social-pill-btn">
-                <span>Twitter</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
-              </a>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-
-    <!-- ====================================================================
-         VIEW 5: ABOUT (Creator Story & Profile)
-         ==================================================================== -->
-    <div class="website-view-tab" id="tab-about">
-      <div class="website-content-grid">
-        
-        <div class="website-left-col">
-          <img src="assets/images/manu_photo.png" alt="Manpreeth Portrait" class="left-hero-img" id="about-portrait-img">
-          <div class="tab-corner-badge" id="about-badge-label">Manpreeth</div>
-        </div>
-
-        <div class="website-right-col">
-          <div class="profile-overview-card" style="flex:1;">
-            <div class="profile-titles">
-              <h2 style="font-size:24px; margin-bottom:6px;" id="about-title">Hi, I'm Manpreeth</h2>
-              <p style="font-size:13px; color:var(--text-secondary);" id="about-sub">AI Generalist & Full Stack Developer • Founder at Socialeo</p>
-            </div>
-            
-            <p class="profile-bio-text" style="font-size:14px; line-height:1.7;">
-              I craft bespoke digital experiences, high-performance web applications in React/Next.js and Webflow, and autonomous AI automation systems for modern businesses.
-            </p>
-
-            <div class="darkness-specs-table" style="margin-top:10px;">
-              <div class="darkness-spec-row"><span class="spec-label">Specialization</span><span class="spec-value">AI Automation & Full-Stack</span></div>
-              <div class="darkness-spec-row"><span class="spec-label">Agency</span><span class="spec-value">Founder, Socialeo</span></div>
-              <div class="darkness-spec-row"><span class="spec-label">Education</span><span class="spec-value">B.E. Computer Science</span></div>
-              <div class="darkness-spec-row"><span class="spec-label">Location</span><span class="spec-value">India • Remote Worldwide</span></div>
-            </div>
-
-            <div style="margin-top:auto; display:flex; flex-direction:column; gap:10px;">
-              <div style="background:var(--card-bg); border:1px solid var(--card-border); border-radius:10px; padding:12px 14px; display:flex; align-items:center; justify-content:space-between;">
-                <div style="display:flex; align-items:center; gap:8px;">
-                  <span class="nav-status-dot"></span>
-                  <span style="font-size:12px; font-weight:600;">Verified Notion Essentials Credential</span>
+                <h4 style="font-size:13.5px; font-weight:700; color:var(--text-primary);">Education & Core Credentials</h4>
+                <div class="education-pill-row" style="margin-top:6px;">
+                  <span class="education-meta-pill">
+                    <strong>BCA (Bachelor of Computer Applications)</strong> — KSOU (2023–2027, 3rd Sem Done)
+                  </span>
+                  <span class="education-meta-pill">
+                    <strong>200-Hr Yoga Teacher Training (TTS)</strong> — Certified Instructor
+                  </span>
                 </div>
-                <a href="#" data-tab="certifications" style="font-size:11px; font-weight:600; color:var(--text-primary); text-decoration:none;">View Certifications →</a>
               </div>
-              <div style="display:flex; gap:10px;">
-                <a href="#" class="social-pill-btn btn-dark-pill" data-tab="contact" style="flex:1; justify-content:center; padding:12px;">Let's Collaborate</a>
-                <a href="tel:+918722163256" class="social-pill-btn" style="flex:1; justify-content:center; padding:12px;">Call: +91 8722163256</a>
-              </div>
+              <a href="#" data-tab="certifications" class="studio-dir-btn" style="white-space:nowrap; align-self:center;">View 6 Certs →</a>
             </div>
           </div>
+
         </div>
 
       </div>
     </div>
 
     <!-- ====================================================================
-         VIEW: CERTIFICATIONS (Verified Credentials & Licenses)
+         VIEW 3: CERTIFICATIONS (Verified Credentials & Licenses)
          ==================================================================== -->
     <div class="website-view-tab" id="tab-certifications">
       <div class="website-content-grid">
@@ -417,9 +272,9 @@
         <!-- Left Hero Column: High-Res Certificate Preview -->
         <div class="website-left-col">
           <div class="cert-hero-container">
-            <img src="assets/images/certs/notion_essentials.jpg" alt="Notion Essentials Certificate" class="cert-hero-image" id="cert-preview-img">
+            <img src="assets/images/certs/claude_code_101.svg" alt="Certificate Preview" class="cert-hero-image" id="cert-preview-img">
           </div>
-          <div class="tab-corner-badge" id="cert-badge-label">Notion Essentials • Skilljar</div>
+          <div class="tab-corner-badge" id="cert-badge-label">Claude Code 101 • Anthropic</div>
         </div>
 
         <!-- Right Column: Verification Details & Credential Registry -->
@@ -433,7 +288,7 @@
               </div>
               <span class="cert-count-badge">
                 <span class="nav-status-dot"></span>
-                <span id="cert-count-text">1 Verified</span>
+                <span id="cert-count-text">6 Verified</span>
               </span>
             </div>
 
@@ -448,9 +303,9 @@
             <div style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
               <div>
                 <h4 style="font-size:14px; font-weight:700;">Instant Verification</h4>
-                <p style="font-size:12px; color:var(--text-secondary); margin-top:2px;">All certificates are verified on third-party registries with unique credential IDs.</p>
+                <p style="font-size:12px; color:var(--text-secondary); margin-top:2px;">All certificates are verified on official third-party registries with unique credential IDs.</p>
               </div>
-              <a href="https://verify.skilljar.com/c/a7obunazytxj" target="_blank" class="studio-dir-btn">Verify on Skilljar ↗</a>
+              <a href="https://academy.claude.com/verify/12d6bf558501fc02760d84eafd6c2645" target="_blank" class="studio-dir-btn">Verify on Claude Academy ↗</a>
             </div>
           </div>
 
@@ -460,35 +315,248 @@
     </div>
 
     <!-- ====================================================================
-         VIEW 6: BLOG
+         VIEW 4: ABOUT MANPREETH
          ==================================================================== -->
-    <div class="website-view-tab" id="tab-blog">
+    <div class="website-view-tab" id="tab-about">
       <div class="website-content-grid">
+        
         <div class="website-left-col">
-          <img src="assets/images/blog_1_trends.webp" alt="Design Trends" class="left-hero-img">
-          <div class="tab-corner-badge">Trends 2024</div>
+          <img src="assets/images/manu_photo.png" alt="Manpreeth Portrait" class="left-hero-img" id="about-portrait-img">
+          <div class="tab-corner-badge" id="about-badge-label">Manpreeth • Mysore</div>
         </div>
 
         <div class="website-right-col">
-          <div class="profile-overview-card">
-            <h2 style="font-size:24px;">5 Essential Web Design Trends for 2024</h2>
-            <p style="font-size:12px; color:var(--text-tertiary);">23rd November 2024 • 2 Min Read</p>
-            <p class="profile-bio-text">
-              Discover how modern sculpted viewport layouts, physical micro-interactions, and harmonic dark/light mode themes are shaping the next generation of digital portfolios.
-            </p>
-          </div>
-
-          <div class="latest-work-cards-row">
-            <div class="mini-work-card" data-tab="home">
-              <div class="tab-corner-badge top-left">UX Strategy</div>
-              <img src="assets/images/blog_2_ux.webp" alt="UX Conversions" class="mini-work-img">
+          <div class="profile-overview-card" style="flex:1; overflow-y:auto; max-height:590px;">
+            <div class="profile-titles">
+              <h2 style="font-size:24px; margin-bottom:4px;" id="about-title">Hi, I'm Manpreeth: AI Generalist & Developer</h2>
+              <p style="font-size:12.5px; color:var(--text-secondary);" id="about-sub">Founder at Socialeo • BCA Student at KSOU • Operations & Solutions Specialist</p>
             </div>
-            <div class="mini-work-card" data-tab="home">
-              <div class="tab-corner-badge top-left">Design Mistakes</div>
-              <img src="assets/images/blog_3_mistakes.webp" alt="Design Mistakes" class="mini-work-img">
+            
+            <p class="profile-bio-text" style="font-size:13px; line-height:1.65; margin-top:10px;">
+              I blend strong interpersonal communication and operations leadership with cutting-edge AI orchestration and full-stack web engineering. A natural people-person who loves traveling, I turn complex business challenges into sleek, high-performing digital solutions through rapid Vibe Coding and autonomous agents.
+            </p>
+
+            <!-- Technical Skills Cloud -->
+            <div style="display:flex; flex-direction:column; gap:12px; margin-top:14px;">
+              
+              <div class="skills-category-group">
+                <span class="skills-category-title">🤖 AI & Autonomous Agents</span>
+                <div class="skills-tag-cloud">
+                  <span class="skill-bubble-tag">Autonomous AI Agents</span>
+                  <span class="skill-bubble-tag">Claude Code Terminal Loops</span>
+                  <span class="skill-bubble-tag">Prompt Architecture</span>
+                  <span class="skill-bubble-tag">Vibe Coding</span>
+                  <span class="skill-bubble-tag">Context Optimization</span>
+                </div>
+              </div>
+
+              <div class="skills-category-group">
+                <span class="skills-category-title">💻 Web & Full-Stack Development</span>
+                <div class="skills-tag-cloud">
+                  <span class="skill-bubble-tag">React</span>
+                  <span class="skill-bubble-tag">Next.js</span>
+                  <span class="skill-bubble-tag">Node.js</span>
+                  <span class="skill-bubble-tag">JavaScript (ES6+)</span>
+                  <span class="skill-bubble-tag">Supabase</span>
+                  <span class="skill-bubble-tag">REST APIs</span>
+                  <span class="skill-bubble-tag">Vercel</span>
+                </div>
+              </div>
+
+              <div class="skills-category-group">
+                <span class="skills-category-title">⚡ Operations & Interpersonal Strengths</span>
+                <div class="skills-tag-cloud">
+                  <span class="skill-bubble-tag">Operations Management</span>
+                  <span class="skill-bubble-tag">Customer Solutions</span>
+                  <span class="skill-bubble-tag">Client Advisory</span>
+                  <span class="skill-bubble-tag">Cross-functional Team Lead</span>
+                  <span class="skill-bubble-tag">Surfing & Skating</span>
+                  <span class="skill-bubble-tag">200hr TTS Certified Yoga</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Specs Table -->
+            <div class="darkness-specs-table" style="margin-top:14px;">
+              <div class="darkness-spec-row"><span class="spec-label">Current Role</span><span class="spec-value">Founder, Socialeo Digital Studio</span></div>
+              <div class="darkness-spec-row"><span class="spec-label">Education</span><span class="spec-value">BCA @ KSOU (In Progress, 3rd Sem Done)</span></div>
+              <div class="darkness-spec-row"><span class="spec-label">Target Roles</span><span class="spec-value">Remote AI/Tech Support • Solutions • Full-Stack</span></div>
+              <div class="darkness-spec-row"><span class="spec-label">Location</span><span class="spec-value">Mysore, Karnataka, India • Remote Worldwide</span></div>
+            </div>
+
+            <!-- Actions Row -->
+            <div style="margin-top:16px; display:flex; gap:10px;">
+              <a href="#" class="social-pill-btn btn-dark-pill" data-tab="experience" style="flex:1; justify-content:center; padding:12px;">View Resume</a>
+              <a href="tel:+918722163256" class="social-pill-btn" style="flex:1; justify-content:center; padding:12px;">Call: +91 8722163256</a>
             </div>
           </div>
         </div>
+
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         VIEW 5: PROJECT DETAIL — SOCIALEO
+         ==================================================================== -->
+    <div class="website-view-tab" id="tab-project-socialeo">
+      <div class="website-content-grid">
+        
+        <div class="website-left-col">
+          <img src="assets/images/work_hanssen.webp" alt="Socialeo AI Platform" class="left-hero-img">
+          <div class="tab-corner-badge">Socialeo Platform</div>
+        </div>
+
+        <div class="website-right-col">
+          
+          <div class="darkness-top-card">
+            <div class="darkness-info-col">
+              <h2>Socialeo</h2>
+              <p>Autonomous AI solution platform & OpenSEO engine. Engineered with standing background cron agents, multi-hub keyword clustering, and sub-500ms initial load times.</p>
+            </div>
+
+            <div class="darkness-specs-table">
+              <div class="darkness-spec-row"><span class="spec-label">Year</span><span class="spec-value">2024 – Present</span></div>
+              <div class="darkness-spec-row"><span class="spec-label">Role</span><span class="spec-value">Founder & Product Engineer</span></div>
+              <div class="darkness-spec-row"><span class="spec-label">Tech</span><span class="spec-value">Next.js, Node.js, AI Agents, Vercel</span></div>
+              <div class="darkness-spec-row"><span class="spec-label">Metrics</span><span class="spec-value">100% Core Web Vitals</span></div>
+            </div>
+          </div>
+
+          <div class="profile-overview-card" style="margin-top:12px; padding:20px;">
+            <h4 style="font-size:14px; font-weight:700; margin-bottom:8px;">Project Highlights</h4>
+            <p style="font-size:13px; color:var(--text-secondary); line-height:1.6;">
+              • Designed autonomous agents orchestrating web research and SEO keyword audits.<br>
+              • Built high-performance responsive interface deployed seamlessly on Vercel.<br>
+              • Created custom analytics dashboards and dynamic client lead capture funnels.
+            </p>
+            <div style="display:flex; gap:10px; margin-top:14px;">
+              <a href="https://socialeo.vercel.app/" target="_blank" class="social-pill-btn btn-dark-pill" style="flex:1; justify-content:center;">Visit Socialeo Live ↗</a>
+              <a href="#" data-tab="home" class="social-pill-btn" style="flex:1; justify-content:center;">← Back to Projects</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         VIEW 6: PROJECT DETAIL — YOGA WITH SRINATHA
+         ==================================================================== -->
+    <div class="website-view-tab" id="tab-project-yoga">
+      <div class="website-content-grid">
+        
+        <div class="website-left-col">
+          <img src="assets/images/work_fjord.webp" alt="Yoga With Srinatha EdTech" class="left-hero-img">
+          <div class="tab-corner-badge">Yoga With Srinatha</div>
+        </div>
+
+        <div class="website-right-col">
+          
+          <div class="darkness-top-card">
+            <div class="darkness-info-col">
+              <h2>Yoga With Srinatha</h2>
+              <p>Full-stack educational platform and secure web application. Engineered with student authentication, course video streaming, and digital payment workflows.</p>
+            </div>
+
+            <div class="darkness-specs-table">
+              <div class="darkness-spec-row"><span class="spec-label">Year</span><span class="spec-value">2024</span></div>
+              <div class="darkness-spec-row"><span class="spec-label">Client</span><span class="spec-value">Srinatha Yoga</span></div>
+              <div class="darkness-spec-row"><span class="spec-label">Tech</span><span class="spec-value">Supabase, React, Auth, Video</span></div>
+              <div class="darkness-spec-row"><span class="spec-label">Features</span><span class="spec-value">Course Checkout & Streaming</span></div>
+            </div>
+          </div>
+
+          <div class="profile-overview-card" style="margin-top:12px; padding:20px;">
+            <h4 style="font-size:14px; font-weight:700; margin-bottom:8px;">Key Technical Accomplishments</h4>
+            <p style="font-size:13px; color:var(--text-secondary); line-height:1.6;">
+              • Implemented secure user authentication and gated video player preventing unauthorized access.<br>
+              • Built seamless course checkout experience enabling direct class bookings worldwide.<br>
+              • Integrated Supabase database for real-time student progress tracking.
+            </p>
+            <div style="display:flex; gap:10px; margin-top:14px;">
+              <a href="#" data-tab="experience" class="social-pill-btn btn-dark-pill" style="flex:1; justify-content:center;">View in Resume Timeline</a>
+              <a href="#" data-tab="home" class="social-pill-btn" style="flex:1; justify-content:center;">← Back to Projects</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         VIEW 7: CONTACT MANPREETH
+         ==================================================================== -->
+    <div class="website-view-tab" id="tab-contact">
+      <div class="website-content-grid">
+        
+        <!-- Left Column: Portrait & Mysore Office Pin -->
+        <div class="website-left-col">
+          <img src="assets/images/manu_photo.png" alt="Manpreeth N Mysore" class="left-hero-img">
+          <div class="tab-corner-badge">Mysore • Remote Worldwide</div>
+        </div>
+
+        <!-- Right Column: Contact Form & Channels -->
+        <div class="website-right-col">
+          
+          <!-- Top Form Card -->
+          <div class="contact-top-card">
+            <h2>Let's Connect</h2>
+            <form id="website-contact-form" class="contact-form-grid">
+              <div class="form-inputs-row">
+                <input type="text" id="form-name" class="contact-input" placeholder="Your Name" required>
+                <input type="email" id="form-email" class="contact-input" placeholder="Your Email" required>
+              </div>
+              <textarea id="form-message" class="contact-textarea" placeholder="How can we collaborate? (Project, Remote Role, Inquiry)" required></textarea>
+              <button type="submit" class="contact-submit-btn">Send Message</button>
+            </form>
+          </div>
+
+          <!-- Bottom Row: Direct Details -->
+          <div class="contact-bottom-row">
+            <!-- Location Card -->
+            <div class="studio-address-card">
+              <div>
+                <h4>Location &<br>Availability</h4>
+                <p style="margin-top:8px;">Mysore 570017,<br>Karnataka, India<br>Open to Remote Worldwide</p>
+              </div>
+              <a href="mailto:manpreeth007@gmail.com" class="studio-dir-btn">Send Email ↗</a>
+            </div>
+
+            <!-- Direct Contact Card -->
+            <div class="studio-address-card">
+              <div>
+                <h4>Direct<br>Channels</h4>
+                <p style="margin-top:8px;">
+                  <strong>Phone:</strong> +91 87221 63256<br>
+                  <strong>Email:</strong> manpreeth007@gmail.com<br>
+                  <strong>Work:</strong> socialeopvtltd@gmail.com
+                </p>
+              </div>
+              <a href="tel:+918722163256" class="studio-dir-btn">Call Now ↗</a>
+            </div>
+
+            <!-- Social Links Column -->
+            <div class="social-pills-col">
+              <a href="https://github.com/Manu-Socialeo" target="_blank" class="social-pill-btn">
+                <span>GitHub</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </a>
+              <a href="mailto:manpreeth007@gmail.com" class="social-pill-btn">
+                <span>Email</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </a>
+              <a href="https://wa.me/918722163256" target="_blank" class="social-pill-btn">
+                <span>WhatsApp</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
       </div>
     </div>
 

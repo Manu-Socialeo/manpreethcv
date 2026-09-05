@@ -1,7 +1,7 @@
 /**
- * NORDEN / HANSSEN — MINIMAL PORTFOLIO APP CONTROLLER
- * Full interactive controller for the Website View layout, Menu Dropdown,
- * Theme toggling, Tab routing, and Dynamic Certifications registry.
+ * MANPREETH N (MANU) — RESUME & PORTFOLIO CONTROLLER
+ * Full interactive controller for the Scandinavian-inspired layout, Menu Dropdown,
+ * Theme toggling, Tab routing, Experience timeline, and Certifications registry.
  */
 
 (function() {
@@ -9,14 +9,30 @@
 
   // --- STATE ---
   const state = {
-    theme: localStorage.getItem('norden-theme') || 'light',
+    theme: localStorage.getItem('manuresume-theme') || 'light',
     currentTab: 'home',
-    activeProfile: 'hanssen',
     slideIndex: 0,
     slides: [
-      { img: 'assets/images/hanssen_selected_work.jpg', badge: 'Selected Work' },
-      { img: 'assets/images/hanssen_darkness_1.jpg', badge: 'Darkness Editorial' },
-      { img: 'assets/images/hanssen_beige.jpg', badge: 'Beige Collection' }
+      { 
+        img: 'assets/images/work_hanssen.webp', 
+        badge: 'Socialeo • AI Suite & OpenSEO',
+        tab: 'project-socialeo'
+      },
+      { 
+        img: 'assets/images/work_fjord.webp', 
+        badge: 'Yoga With Srinatha • EdTech App',
+        tab: 'project-yoga'
+      },
+      { 
+        img: 'assets/images/work_ayano.webp', 
+        badge: 'OmniRoute • Multi-Model AI Gateway',
+        tab: 'home'
+      },
+      { 
+        img: 'assets/images/work_qitchen.webp', 
+        badge: 'VO2 Max • Athletic Studio Platform',
+        tab: 'home'
+      }
     ]
   };
 
@@ -30,17 +46,18 @@
   const websiteToast = document.getElementById('website-toast');
   const heroSliderImg = document.getElementById('hero-slider-img');
   const heroBadgeLabel = document.getElementById('hero-badge-label');
-  const sliderDots = document.querySelectorAll('.slider-dot');
+  const sliderDotsBar = document.getElementById('slider-dots-bar');
   const certListContainer = document.getElementById('cert-list-container');
   const certPreviewImg = document.getElementById('cert-preview-img');
   const certBadgeLabel = document.getElementById('cert-badge-label');
   const certCountText = document.getElementById('cert-count-text');
+  const experienceListContainer = document.getElementById('experience-list-container');
 
   // --- THEME MANAGEMENT ---
   function applyTheme(theme) {
     state.theme = theme;
     htmlEl.setAttribute('data-theme', theme);
-    localStorage.setItem('norden-theme', theme);
+    localStorage.setItem('manuresume-theme', theme);
 
     const faviconEl = document.getElementById('dynamic-favicon');
     if (faviconEl) {
@@ -66,10 +83,10 @@
     websiteToast.classList.add('show');
     setTimeout(() => {
       websiteToast.classList.remove('show');
-    }, 2800);
+    }, 3000);
   }
 
-  // --- MENU DROPDOWN CONTROLLER (Matches User Screenshot) ---
+  // --- MENU DROPDOWN CONTROLLER ---
   function openMenuDropdown() {
     if (menuDropdownOverlay) {
       menuDropdownOverlay.classList.add('open');
@@ -178,7 +195,7 @@
     }
   });
 
-  // --- SLIDER CONTROLLER (Selected Work) ---
+  // --- SLIDER CONTROLLER (Selected Projects) ---
   function setSlide(index) {
     state.slideIndex = index;
     const cur = state.slides[index];
@@ -189,11 +206,16 @@
         heroSliderImg.style.opacity = '1';
       }, 150);
     }
-    if (heroBadgeLabel && cur) heroBadgeLabel.textContent = cur.badge;
+    if (heroBadgeLabel && cur) {
+      heroBadgeLabel.textContent = cur.badge;
+    }
 
-    sliderDots.forEach((dot, idx) => {
-      dot.classList.toggle('active', idx === index);
-    });
+    if (sliderDotsBar) {
+      const dots = sliderDotsBar.querySelectorAll('.slider-dot');
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === index);
+      });
+    }
   }
 
   const prevBtn = document.getElementById('slider-prev-btn');
@@ -213,12 +235,51 @@
     });
   }
 
-  sliderDots.forEach(dot => {
-    dot.addEventListener('click', () => {
-      const slideIdx = parseInt(dot.getAttribute('data-slide'), 10);
-      if (!isNaN(slideIdx)) setSlide(slideIdx);
+  if (sliderDotsBar) {
+    sliderDotsBar.addEventListener('click', (e) => {
+      const dot = e.target.closest('.slider-dot');
+      if (dot) {
+        const slideIdx = parseInt(dot.getAttribute('data-slide'), 10);
+        if (!isNaN(slideIdx)) setSlide(slideIdx);
+      }
     });
-  });
+  }
+
+  // --- EXPERIENCE / RESUME TIMELINE RENDERER ---
+  function renderExperience() {
+    if (!experienceListContainer) return;
+
+    const experiences = (window.SITE_DATA && window.SITE_DATA.experience) || [];
+    experienceListContainer.innerHTML = '';
+
+    experiences.forEach((exp) => {
+      const card = document.createElement('div');
+      card.className = 'experience-item-card';
+
+      const highlightsHtml = (exp.highlights && exp.highlights.length > 0)
+        ? `<ul class="experience-highlights">
+            ${exp.highlights.map(h => `<li class="experience-highlight-item">${h}</li>`).join('')}
+          </ul>`
+        : '';
+
+      card.innerHTML = `
+        <div class="experience-top-row">
+          <div class="experience-role-group">
+            <h3>${exp.role}</h3>
+            <div class="experience-company-meta">
+              <span>${exp.company}</span> • <span>${exp.location}</span>
+            </div>
+          </div>
+          <span class="experience-duration-badge">${exp.duration}</span>
+        </div>
+
+        <p class="experience-desc">${exp.desc}</p>
+        ${highlightsHtml}
+      `;
+
+      experienceListContainer.appendChild(card);
+    });
+  }
 
   // --- DYNAMIC CERTIFICATIONS RENDERER ---
   function renderCertifications() {
@@ -279,7 +340,7 @@
         </div>
 
         <div class="cert-actions-row">
-          <span style="font-size:11.5px; color:var(--text-secondary);">Issued to: <strong>${cert.recipient}</strong></span>
+          <span style="font-size:11.5px; color:var(--text-secondary);">Recipient: <strong>${cert.recipient}</strong></span>
           <a href="${cert.verifyUrl}" target="_blank" class="cert-verify-link">
             <span>Verify on ${cert.platform}</span>
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -303,7 +364,7 @@
       certListContainer.appendChild(card);
     });
 
-    // Set initial preview
+    // Set initial preview to first cert (Claude Code 101)
     if (certs.length > 0 && certPreviewImg && certs[0].image) {
       certPreviewImg.src = certs[0].image;
     }
@@ -312,43 +373,6 @@
     }
   }
 
-  // --- PROFILE SWITCHER (Hanssen View vs. Manpreeth View) ---
-  const toggleHanssenBtn = document.getElementById('profile-toggle-hanssen');
-  const toggleManuBtn = document.getElementById('profile-toggle-manu');
-  const brandText = document.getElementById('nav-brand-text');
-  const dropdownBrandText = document.getElementById('dropdown-brand-text');
-  const creatorAvatar = document.getElementById('creator-avatar');
-  const creatorName = document.getElementById('creator-name');
-  const creatorRole = document.getElementById('creator-role');
-  const creatorBio = document.getElementById('creator-bio');
-
-  function setProfile(profile) {
-    state.activeProfile = profile;
-    if (toggleHanssenBtn) toggleHanssenBtn.classList.toggle('active', profile === 'hanssen');
-    if (toggleManuBtn) toggleManuBtn.classList.toggle('active', profile === 'manu');
-
-    if (profile === 'manu') {
-      if (brandText) brandText.textContent = 'Manpreeth';
-      if (dropdownBrandText) dropdownBrandText.textContent = 'Manpreeth';
-      if (creatorAvatar) creatorAvatar.src = 'assets/images/manu_photo.png';
-      if (creatorName) creatorName.textContent = 'Manpreeth N';
-      if (creatorRole) creatorRole.textContent = 'AI Generalist & Full-Stack Developer';
-      if (creatorBio) creatorBio.textContent = 'Founder at Socialeo. Building autonomous AI automation systems, high-converting web applications in Framer & React, and bespoke software solutions.';
-      showToast('Switched to Manpreeth Founder View');
-    } else {
-      if (brandText) brandText.textContent = 'Norden';
-      if (dropdownBrandText) dropdownBrandText.textContent = 'Norden';
-      if (creatorAvatar) creatorAvatar.src = 'assets/images/ema_hanssen_avatar.jpg';
-      if (creatorName) creatorName.textContent = 'Ema Hanssen';
-      if (creatorRole) creatorRole.textContent = 'Photographer & Art Director';
-      if (creatorBio) creatorBio.textContent = "I'm Ema, a photographer based in Prague. I capture authentic moments and tell stories through my images, blending creativity and emotion in each shot.";
-      showToast('Switched to Hanssen View');
-    }
-  }
-
-  if (toggleHanssenBtn) toggleHanssenBtn.addEventListener('click', () => setProfile('hanssen'));
-  if (toggleManuBtn) toggleManuBtn.addEventListener('click', () => setProfile('manu'));
-
   // --- CONTACT FORM HANDLER ---
   const contactForm = document.getElementById('website-contact-form');
   if (contactForm) {
@@ -356,13 +380,15 @@
       e.preventDefault();
       const nameInput = document.getElementById('form-name');
       const name = nameInput ? nameInput.value.trim() : 'Friend';
-      showToast(`Thank you, ${name}! Your inquiry has been dispatched.`);
+      showToast(`Thank you, ${name}! Your inquiry has been sent to Manpreeth.`);
       contactForm.reset();
     });
   }
 
   // --- INITIALIZE ---
   applyTheme(state.theme);
+  renderExperience();
   renderCertifications();
+  setSlide(0);
 
 })();
