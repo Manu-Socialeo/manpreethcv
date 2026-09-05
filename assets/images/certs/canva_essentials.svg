@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="100%" height="100%">
+  <defs>
+    <linearGradient id="canvaBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#121316"/>
+      <stop offset="50%" stop-color="#0e1012"/>
+      <stop offset="100%" stop-color="#08090a"/>
+    </linearGradient>
+    <linearGradient id="canvaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00C4CC"/>
+      <stop offset="50%" stop-color="#5E3FE6"/>
+      <stop offset="100%" stop-color="#7D2AE8"/>
+    </linearGradient>
+    <linearGradient id="canvaBorder" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00C4CC" stop-opacity="0.7"/>
+      <stop offset="50%" stop-color="#2a2e33" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#7D2AE8" stop-opacity="0.6"/>
+    </linearGradient>
+    <linearGradient id="canvaPill" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#172e35"/>
+      <stop offset="100%" stop-color="#19192d"/>
+    </linearGradient>
+    <filter id="canvaShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000000" flood-opacity="0.7"/>
+    </filter>
+  </defs>
+
+  <!-- Outer Frame -->
+  <rect x="20" y="20" width="760" height="480" rx="24" fill="url(#canvaBg)" stroke="url(#canvaBorder)" stroke-width="1.5" filter="url(#canvaShadow)"/>
+
+  <!-- Subtle Radial Glow Background -->
+  <circle cx="700" cy="100" r="180" fill="url(#canvaGrad)" opacity="0.08" filter="blur(40px)"/>
+  <circle cx="100" cy="450" r="180" fill="url(#canvaGrad)" opacity="0.05" filter="blur(40px)"/>
+
+  <!-- Top Header: Logo + Verified Pill -->
+  <g transform="translate(60, 64)">
+    <!-- Canva Logo mark -->
+    <rect x="0" y="0" width="38" height="38" rx="10" fill="url(#canvaGrad)"/>
+    <text x="19" y="27" font-family="'DM Sans', 'Inter', sans-serif" font-size="22" font-weight="900" fill="#ffffff" text-anchor="middle" font-style="italic">C</text>
+
+    <text x="50" y="21" font-family="'DM Sans', system-ui, sans-serif" font-size="16" font-weight="700" fill="#ffffff" letter-spacing="-0.02em">Canva</text>
+    <text x="104" y="21" font-family="'Inter', system-ui, sans-serif" font-size="13" font-weight="400" fill="#94a3b8">• Design School</text>
+
+    <!-- Verified Badge -->
+    <rect x="520" y="4" width="140" height="30" rx="15" fill="url(#canvaPill)" stroke="#00C4CC" stroke-opacity="0.4" stroke-width="1"/>
+    <circle cx="536" cy="19" r="4" fill="#22c55e"/>
+    <text x="548" y="24" font-family="'Inter', system-ui, sans-serif" font-size="11" font-weight="600" fill="#00C4CC" letter-spacing="0.02em">OFFICIAL AWARD</text>
+  </g>
+
+  <!-- Main Award Title -->
+  <g transform="translate(60, 180)">
+    <text x="0" y="0" font-family="'Inter', system-ui, sans-serif" font-size="13" font-weight="600" fill="#00C4CC" letter-spacing="0.1em">CERTIFICATION OF ACHIEVEMENT</text>
+    <text x="0" y="44" font-family="'DM Sans', system-ui, sans-serif" font-size="34" font-weight="700" fill="#ffffff" letter-spacing="-0.02em">Canva Essentials &amp; Visual Design</text>
+  </g>
+
+  <!-- Recipient Box -->
+  <g transform="translate(60, 290)">
+    <text x="0" y="0" font-family="'Inter', system-ui, sans-serif" font-size="12" font-weight="500" fill="#64748b">RECIPIENT</text>
+    <text x="0" y="28" font-family="'DM Sans', system-ui, sans-serif" font-size="22" font-weight="700" fill="#f8fafc">Manpreeth N</text>
+    <text x="0" y="52" font-family="'Inter', system-ui, sans-serif" font-size="12.5" font-weight="400" fill="#94a3b8">Founder, Socialeo • Verified Visual Design &amp; Content Creation Competency</text>
+  </g>
+
+  <!-- Footer Info -->
+  <g transform="translate(60, 410)">
+    <line x1="0" y1="0" x2="660" y2="0" stroke="#1e293b" stroke-width="1"/>
+    
+    <text x="0" y="32" font-family="'Inter', system-ui, sans-serif" font-size="11" font-weight="500" fill="#64748b">ISSUER</text>
+    <text x="0" y="52" font-family="'Inter', system-ui, sans-serif" font-size="12.5" font-weight="600" fill="#e2e8f0">Canva Design School</text>
+
+    <text x="180" y="32" font-family="'Inter', system-ui, sans-serif" font-size="11" font-weight="500" fill="#64748b">BADGE STATUS</text>
+    <text x="180" y="52" font-family="'Inter', system-ui, sans-serif" font-size="12.5" font-weight="600" fill="#00C4CC">learning-certificate-1 (Exam Passed)</text>
+
+    <text x="440" y="32" font-family="'Inter', system-ui, sans-serif" font-size="11" font-weight="500" fill="#64748b">AWARD ID</text>
+    <text x="440" y="52" font-family="'SF Mono', 'Courier New', monospace" font-size="11.5" font-weight="500" fill="#00C4CC">be7051c2-f724-432b...</text>
+  </g>
+</svg>

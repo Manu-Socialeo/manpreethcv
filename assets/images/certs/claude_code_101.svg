@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18191b"/>
+      <stop offset="50%" stop-color="#121314"/>
+      <stop offset="100%" stop-color="#0a0a0b"/>
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d47656" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#3f3f46" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#d47656" stop-opacity="0.5"/>
+    </linearGradient>
+    <linearGradient id="claudeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ea6a47"/>
+      <stop offset="100%" stop-color="#d47656"/>
+    </linearGradient>
+    <linearGradient id="badgePillGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a2220"/>
+      <stop offset="100%" stop-color="#1f1816"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#000000" flood-opacity="0.65"/>
+    </filter>
+  </defs>
+
+  <!-- Outer Card Frame -->
+  <rect x="20" y="20" width="760" height="480" rx="24" fill="url(#bgGrad)" stroke="url(#borderGrad)" stroke-width="1.5" filter="url(#cardShadow)"/>
+
+  <!-- Subtle Inner Grid Watermark -->
+  <g opacity="0.04" stroke="#ffffff" stroke-width="1">
+    <line x1="20" y1="140" x2="780" y2="140"/>
+    <line x1="20" y1="260" x2="780" y2="260"/>
+    <line x1="20" y1="380" x2="780" y2="380"/>
+    <line x1="260" y1="20" x2="260" y2="500"/>
+    <line x1="520" y1="20" x2="520" y2="500"/>
+  </g>
+
+  <!-- Top Status / Organization Header -->
+  <g transform="translate(60, 64)">
+    <!-- Anthropic Claude Spark Icon -->
+    <g fill="url(#claudeGrad)">
+      <path d="M18 2L20.8 12.2L31 15L20.8 17.8L18 28L15.2 17.8L5 15L15.2 12.2Z"/>
+      <circle cx="18" cy="15" r="2.5" fill="#ffffff"/>
+    </g>
+
+    <text x="44" y="20" font-family="'DM Sans', system-ui, sans-serif" font-size="14" font-weight="700" fill="#ffffff" letter-spacing="0.04em">ANTHROPIC</text>
+    <text x="136" y="20" font-family="'Inter', system-ui, sans-serif" font-size="13" font-weight="400" fill="#a1a1aa">• Claude Academy</text>
+
+    <!-- Verified Pill -->
+    <rect x="520" y="0" width="140" height="30" rx="15" fill="url(#badgePillGrad)" stroke="#d47656" stroke-opacity="0.4" stroke-width="1"/>
+    <circle cx="536" cy="15" r="4" fill="#22c55e"/>
+    <text x="548" y="20" font-family="'Inter', system-ui, sans-serif" font-size="11.5" font-weight="600" fill="#d47656" letter-spacing="0.02em">VERIFIED BADGE</text>
+  </g>
+
+  <!-- Certificate Main Title & Course -->
+  <g transform="translate(60, 180)">
+    <text x="0" y="0" font-family="'Inter', system-ui, sans-serif" font-size="13" font-weight="600" fill="#d47656" letter-spacing="0.1em">COMPLETION CREDENTIAL</text>
+    <text x="0" y="44" font-family="'DM Sans', system-ui, sans-serif" font-size="34" font-weight="700" fill="#ffffff" letter-spacing="-0.02em">Claude Code 101</text>
+  </g>
+
+  <!-- Recipient Box -->
+  <g transform="translate(60, 290)">
+    <text x="0" y="0" font-family="'Inter', system-ui, sans-serif" font-size="12" font-weight="500" fill="#71717a">AWARDED TO</text>
+    <text x="0" y="28" font-family="'DM Sans', system-ui, sans-serif" font-size="22" font-weight="700" fill="#f4f4f5">Manpreeth N</text>
+    <text x="0" y="52" font-family="'Inter', system-ui, sans-serif" font-size="12.5" font-weight="400" fill="#a1a1aa">Founder, Socialeo • Full-Stack &amp; AI Generalist</text>
+  </g>
+
+  <!-- Date & Verification Footer -->
+  <g transform="translate(60, 410)">
+    <line x1="0" y1="0" x2="660" y2="0" stroke="#27272a" stroke-width="1"/>
+    
+    <text x="0" y="32" font-family="'Inter', system-ui, sans-serif" font-size="11" font-weight="500" fill="#71717a">ISSUED DATE</text>
+    <text x="0" y="52" font-family="'Inter', system-ui, sans-serif" font-size="12.5" font-weight="600" fill="#e4e4e7">September 5, 2026</text>
+
+    <text x="180" y="32" font-family="'Inter', system-ui, sans-serif" font-size="11" font-weight="500" fill="#71717a">PLATFORM</text>
+    <text x="180" y="52" font-family="'Inter', system-ui, sans-serif" font-size="12.5" font-weight="600" fill="#e4e4e7">Claude Academy Public API</text>
+
+    <text x="400" y="32" font-family="'Inter', system-ui, sans-serif" font-size="11" font-weight="500" fill="#71717a">VERIFICATION CODE</text>
+    <text x="400" y="52" font-family="'SF Mono', 'Courier New', monospace" font-size="11.5" font-weight="500" fill="#d47656">12d6bf558501fc02760d84ea...</text>
+  </g>
+</svg>

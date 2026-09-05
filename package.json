@@ -1,0 +1,20 @@
+{
+  "name": "manuresume-norden-portfolio",
+  "version": "1.0.0",
+  "description": "Manpreeth's Portfolio — Norden Minimal Portfolio Framer Replication",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve -l 3000 .",
+    "dev": "npx serve -l 3000 .",
+    "verify": "node scripts/verify_integrity.js"
+  },
+  "keywords": [
+    "portfolio",
+    "norden",
+    "framer",
+    "minimal",
+    "ai-developer"
+  ],
+  "author": "Manpreeth",
+  "license": "MIT"
+}
