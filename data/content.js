@@ -2,317 +2,321 @@ const SITE_DATA = {
   profile: {
     name: "Manpreeth N",
     preferredName: "Manu",
-    title: "AI Generalist & Full Stack Developer",
-    subtitle: "Operations Specialist • Founder at Socialeo",
-    company: "Founder at Socialeo",
-    availability: "Available for Remote Roles & Projects",
-    status: "Actively Collaborating",
-    bio: "AI Generalist, Full-Stack Web Developer, and Founder of Socialeo based in Mysore, India. Specializing in autonomous AI agent workflows, modern web applications, rapid Vibe Coding, and high-impact operations leadership.",
-    aboutHeading: "Hi, I’m Manpreeth: AI Generalist & Developer",
-    aboutSub: "Founder at Socialeo • BCA Student at KSOU • Operations & Customer Solutions Specialist",
-    avatar: "assets/images/manu_photo.png",
-    portrait: "assets/images/manu_photo.png",
-    location: "Mysore, Karnataka, India • Remote Worldwide",
+    title: "Operations & AI-Assisted Full-Stack Developer",
+    subtitle: "5+ Years Cross-Functional Operations • Next.js & Supabase Developer",
+    tagline: "Operations & Client-Facing Professional | AI-Assisted Web Developer",
+    availability: "Available for Roles & Projects",
+    status: "Actively Open to Opportunities",
+    location: "Mysore, Karnataka, India • Open to Remote & Relocation",
     email: "manpreeth007@gmail.com",
     secondaryEmail: "socialeopvtltd@gmail.com",
     phone: "+91 87221 63256",
     github: "https://github.com/Manu-Socialeo",
-    education: "Bachelor of Computer Applications (BCA) — Karnataka State Open University (KSOU)",
-    passions: ["AI Automation", "Vibe Coding", "Surfing & Skating", "Yoga (200hr TTS Certified)", "Global Travel"]
+    linkedin: "https://linkedin.com",
+    heroHeadline: "Your Digital Vision, Perfectly Realized.",
+    heroSubheadline: "Operations and client-facing professional with 5+ years of experience coordinating high-performing teams, driving 40% process improvements, and building production web applications with Next.js, Supabase, and AI workflows. Trusted by client reps from Amazon Prime Video, MX Player, and Hotstar.",
+    avatar: "assets/images/manu_photo.png",
+    education: [
+      {
+        institution: "Karnataka State Open University (KSOU)",
+        degree: "Bachelor of Computer Applications (BCA)",
+        score: "SGPA: 8.05 / 10",
+        duration: "2024 – 2027 (Expected)",
+        location: "Mysore, India"
+      },
+      {
+        institution: "Vidhyaashram PU College",
+        degree: "Pre-University Course (Science — PCMC)",
+        score: "Completed",
+        duration: "2015",
+        location: "Mysore, India"
+      }
+    ],
+    languages: [
+      { language: "English", proficiency: "Fluent" },
+      { language: "Kannada", proficiency: "Native" },
+      { language: "Hindi", proficiency: "Conversational" }
+    ]
   },
 
-  skills: {
-    aiAutomation: ["Autonomous AI Agents", "Claude Code & Terminal Loops", "Prompt Architecture", "Vibe Coding", "Context Management", "Workflow Automation"],
-    webDev: ["React", "Next.js", "JavaScript (ES6+)", "Node.js", "HTML5 & Modern CSS", "Supabase", "Firebase", "REST APIs", "Vercel"],
-    operations: ["Operations Management", "Customer Success", "Business Analysis", "Client Advisory & Negotiation", "Team Coordination"],
-    tools: ["Git & GitHub", "Figma", "Canva Design School", "Framer", "Notion Workspace Architecture"]
-  },
-
-  experience: [
-    {
-      id: "socialeo",
-      role: "Founder & Product Engineer",
-      company: "Socialeo Digital Product Studio",
-      location: "Mysore / Remote",
-      duration: "2024 – Present",
-      type: "Founder / Full-time",
-      desc: "Architecting autonomous AI automation pipelines, full-stack web platforms, and automated SEO audit engines for modern businesses.",
-      highlights: [
-        "Built Socialeo AI Suite with standing background cron agents and multi-hub keyword clustering",
-        "Engineered bespoke web applications with sub-500ms First Contentful Paint and 100% Core Web Vitals",
-        "Delivered full-stack solutions integrating Next.js, Supabase, and custom REST API endpoints"
-      ]
-    },
-    {
-      id: "freelance",
-      role: "Freelance Full-Stack Developer",
-      company: "Independent Consultant",
-      location: "Remote Worldwide",
-      duration: "2023 – Present",
-      type: "Contract / Freelance",
-      desc: "Designing and developing production-ready web applications, client portals, and e-learning platforms.",
-      highlights: [
-        "Yoga With Srinatha: Built comprehensive platform with user authentication, video player, and course checkout",
-        "VO2 Max Mysore: Engineered athletic fitness studio web platform with interactive class schedules",
-        "Dog Protection Trust: Developed animal rescue charity website with donation workflows (pro bono)"
-      ]
-    },
-    {
-      id: "medianest",
-      role: "Operations Manager",
-      company: "Medianest",
-      location: "Mysore, India",
-      duration: "3 Years",
-      type: "Full-time",
-      desc: "Directed end-to-end operational workflows, cross-functional team coordination, client delivery milestones, and SLA adherence.",
-      highlights: [
-        "Optimized delivery pipelines, accelerating project completion turnaround by 30%",
-        "Led client communications, scope definition, and cross-team alignment across developers and designers",
-        "Resolved high-priority escalations and ensured rigorous quality standards across all deliverables"
-      ]
-    },
-    {
-      id: "sankalp",
-      role: "Property Advisor",
-      company: "Sankalp Construction",
-      location: "Mysore, India",
-      duration: "1.5 Years",
-      type: "Full-time",
-      desc: "Delivered strategic advisory, customer consultation, and relationship management for premium residential and commercial developments.",
-      highlights: [
-        "Conducted high-touch customer consultations and client relationship nurturing",
-        "Facilitated property closures and client onboarding documentation",
-        "Maintained 95%+ client satisfaction rating through transparent consultation"
-      ]
-    },
-    {
-      id: "wld",
-      role: "Campaign Associate",
-      company: "WLD Bangalore",
-      location: "Bangalore, India",
-      duration: "5 Months",
-      type: "Full-time",
-      desc: "Coordinated digital campaign initiatives, brand outreach, and prospective client communications."
-    },
-    {
-      id: "clevertise",
-      role: "Growth & Marketing Intern",
-      company: "Clevertise",
-      location: "Indiranagar, Bangalore",
-      duration: "1 Month",
-      type: "Internship",
-      desc: "Assisted in digital campaign copy, creative asset testing, and growth marketing research."
-    }
+  metrics: [
+    { value: "5+ Years", label: "Operations & Client Relations" },
+    { value: "80+", label: "Client Inquiries Handled Daily" },
+    { value: "40%", label: "Escalation Delay Reduction" },
+    { value: "8.05", label: "BCA SGPA at KSOU" }
   ],
 
-  education: [
-    {
-      degree: "Bachelor of Computer Applications (BCA)",
-      institution: "Karnataka State Open University (KSOU)",
-      duration: "2023 – 2027",
-      status: "In Progress (3rd Sem Completed)",
-      details: "Core focus on Web Technologies, Software Engineering, Database Management Systems, and Object-Oriented Programming."
-    },
-    {
-      degree: "200-Hour Yoga Teacher Training (TTS)",
-      institution: "Certified Yoga Institute",
-      duration: "Completed",
-      status: "Certified Instructor",
-      details: "Mastery of physical wellness, breathwork discipline, posture alignment, and mindful leadership."
-    }
+  brandTicker: [
+    { name: "Amazon Prime Video", icon: "video" },
+    { name: "Disney+ Hotstar", icon: "star" },
+    { name: "MX Player", icon: "play" },
+    { name: "Next.js", icon: "code" },
+    { name: "Supabase", icon: "database" },
+    { name: "Vercel", icon: "cloud" },
+    { name: "Asana", icon: "check-circle" },
+    { name: "LeadSquared", icon: "target" },
+    { name: "Claude AI", icon: "cpu" }
   ],
 
   projects: [
     {
-      id: "socialeo",
-      title: "Socialeo",
-      subtitle: "AI Solutions Platform & OpenSEO Engine",
-      client: "Socialeo Digital Studio",
-      service: "AI Platform & Web Engineering",
-      location: "Mysore / Remote",
-      year: "2024",
-      tagline: "Autonomous AI agent architecture, local citation networks, and high-performance bespoke digital platforms.",
-      metrics: "100% Core Web Vitals • 3 Autonomous Agents",
-      tech: ["Next.js", "Node.js", "AI Agents", "Vercel", "OpenSEO"],
-      link: "https://socialeo.vercel.app/",
+      id: "yoga-school",
+      title: "Yoga School Integrated Platform",
+      category: "Full-Stack Web & Mobile App",
+      duration: "2025 – Present",
       image: "assets/images/work_hanssen.webp",
-      quote: "Transformed digital workflows and organic search visibility with autonomous multi-agent intelligence.",
-      author: "Socialeo Studio",
-      rating: 5
+      tag: "Next.js • Supabase • Vercel",
+      summary: "Designing and developing a full-stack platform integrating e-commerce, student authentication portal, recorded video library, and custom admin dashboard.",
+      highlights: [
+        "Built on Next.js and Supabase with cross-platform support across Android, iOS, and web.",
+        "Empowers school to sell products and deliver online courses to students worldwide.",
+        "Custom admin dashboard gives 100% visibility into student activity, orders, and content management without third-party fees."
+      ],
+      tech: ["Next.js", "Supabase", "TypeScript", "TailwindCSS", "Vercel", "REST APIs"],
+      featured: true
     },
     {
-      id: "yoga-srinatha",
-      title: "Yoga With Srinatha",
-      subtitle: "Course Selling Platform & Web App",
-      client: "Srinatha Yoga",
-      service: "Full-Stack EdTech & Web App",
-      location: "Mysore / Global",
-      year: "2024",
-      tagline: "Custom web platform + secure web application featuring user authentication, course selling, video streaming, and class bookings.",
-      metrics: "User Auth • Video Streaming • Payment Checkout",
-      tech: ["Supabase", "React", "Authentication", "Video Player"],
-      image: "assets/images/work_fjord.webp",
-      quote: "Seamless student onboarding, instant course access, and zero video buffering.",
-      author: "Srinatha Yoga",
-      rating: 5
-    },
-    {
-      id: "omniroute",
-      title: "OmniRoute",
-      subtitle: "Universal Multi-Model AI Gateway",
-      client: "Open-Source / BYOK",
-      service: "AI Systems Infrastructure",
-      location: "Global",
-      year: "2024",
-      tagline: "High-performance AI model routing gateway with OpenDesign BYOK integration, API key validation, and automated fallback routing.",
-      metrics: "Zero Latency • Multi-LLM BYOK Routing",
-      tech: ["Node.js", "Fastify", "ConnectRPC", "REST APIs"],
+      id: "vo2-max",
+      title: "VO2 Max Wellness Website",
+      category: "Commercial Web Platform",
+      duration: "2024 – Present",
       image: "assets/images/work_ayano.webp",
-      quote: "Intelligent failovers and unified access across proprietary and open-source models.",
-      author: "OmniRoute Core",
-      rating: 5
+      tag: "Next.js • Local SEO • Vercel",
+      summary: "Designed and developed a high-converting wellness website for a Mysore-based fitness studio, elevating local search presence and lead generation.",
+      highlights: [
+        "Handled end-to-end delivery: UI design, responsive development, and continuous deployment on Vercel.",
+        "Dramatically improved local search visibility, mobile load speed, and direct appointment bookings."
+      ],
+      tech: ["Next.js", "Vercel", "CSS3 / Modern CSS", "Local SEO Optimization", "Mobile-First UX"],
+      featured: true
     },
     {
-      id: "vo2max",
-      title: "VO2 Max Mysore",
-      subtitle: "Athletic Studio & Endurance Platform",
-      client: "VO2 Max Mysore",
-      service: "High-Performance Web Design",
-      location: "Mysore",
-      year: "2024",
-      tagline: "Performance fitness and athletic endurance studio website with interactive class scheduling, trainer profiles, and membership tiers.",
-      metrics: "Sub-400ms FCP • Interactive Schedule",
-      tech: ["React", "CSS Grid", "Vercel", "Motion"],
+      id: "dog-protection-trust",
+      title: "Dog Protection Trust (DPT) Platform",
+      category: "NGO Public Outreach & Animal Welfare",
+      duration: "2023",
       image: "assets/images/work_qitchen.webp",
-      quote: "Increased membership inquiries by 55% within the first 60 days of launch.",
-      author: "VO2 Max Team",
-      rating: 5
+      tag: "VTVO Collaboration • Pro Bono",
+      summary: "Led pro bono development of an animal welfare NGO platform in collaboration with VTVO, empowering independent outreach and donor engagement.",
+      highlights: [
+        "Enabled the non-profit organisation to manage public outreach, rescue stories, and adoption campaigns independently.",
+        "Built lightweight, accessible donation workflows and community volunteer registration channels."
+      ],
+      tech: ["HTML5", "CSS3", "JavaScript", "VTVO Collab", "Accessibility (a11y)"],
+      featured: true
     },
     {
-      id: "dpt",
-      title: "Dog Protection Trust",
-      subtitle: "Animal Welfare & Rescue Charity",
-      client: "Dog Protection Trust (DPT)",
-      service: "Charity Platform (Pro Bono)",
-      location: "Mysore",
-      year: "2024",
-      tagline: "Pro-bono non-profit web portal showcasing rescue cases, pet adoption pipelines, volunteer onboarding, and donation checkout.",
-      metrics: "120+ Adoptions • Charity Donation Flow",
-      tech: ["HTML5", "Vanilla CSS", "Donation Gateway"],
-      image: "assets/images/hanssen_darkness_1.jpg",
-      quote: "Helped connect rescue animals with loving families across the city.",
-      author: "DPT Volunteers",
-      rating: 5
+      id: "socialeo-ai",
+      title: "Socialeo AI Automation Engine",
+      category: "AI Agent Workflows & SEO Tools",
+      duration: "2024 – Present",
+      image: "assets/images/work_fjord.webp",
+      tag: "Autonomous AI • Cron Agents",
+      summary: "Architected autonomous AI workflows, automated keyword clustering tools, and real-time site audit pipelines for modern agencies.",
+      highlights: [
+        "Constructed automated background agent routines reducing manual SEO auditing by hours.",
+        "Engineered sub-500ms First Contentful Paint web applications with 100% Core Web Vitals."
+      ],
+      tech: ["Node.js", "Claude API", "Python", "Autonomous Agents", "Prompt Architecture"],
+      featured: false
+    }
+  ],
+
+  services: [
+    {
+      id: "ai-workflows",
+      title: "AI & Autonomous Workflows",
+      desc: "Deploying AI-assisted developer workflows, LLM agents, prompt architecture, and automating repetitive business operations."
     },
     {
-      id: "merius",
-      title: "Merius Diagnostics",
-      subtitle: "Clinical Diagnostic & Health Portal",
-      client: "Merius Health",
-      service: "Healthcare Web Platform",
-      location: "Bangalore / Mysore",
-      year: "2024",
-      tagline: "Clinical pathology lab testing platform with test catalog, home sample collection booking, and digital health package discovery.",
-      metrics: "Test Directory • Appointment Scheduling",
-      tech: ["React", "Node.js", "Form Workflows"],
-      image: "assets/images/hanssen_beige.jpg",
-      quote: "Streamlined home sample appointments and diagnostic package discovery.",
-      author: "Merius Diagnostics",
-      rating: 5
+      id: "fullstack-dev",
+      title: "Full-Stack Web Development",
+      desc: "Building blazing-fast web applications using Next.js, Supabase, REST APIs, and Vercel with clean, maintainable architecture."
+    },
+    {
+      id: "operations-leadership",
+      title: "Operations & Client Relations",
+      desc: "Over 5 years managing high-volume client communications (80+ calls/day), SLA adherence, Asana task orchestration, and cutting delays by 40%."
+    },
+    {
+      id: "product-design",
+      title: "Rapid Prototyping & UX",
+      desc: "Translating business concepts into intuitive user experiences, high-converting landing pages, and polished visual presentations using Canva and modern CSS."
+    }
+  ],
+
+  experience: [
+    {
+      id: "sankalp",
+      role: "Property Advisor & Client Relations Associate",
+      company: "Sankalp Construction",
+      location: "Mysore, India",
+      duration: "Nov 2023 – Feb 2025",
+      type: "Full-time",
+      desc: "Orchestrated end-to-end client journeys from initial inquiry to handover, maintaining 90%+ client satisfaction across high-value residential developments.",
+      bullets: [
+        "Handled 80+ customer calls daily, managing the full client journey from initial inquiry to post-sale handover and maintaining satisfaction above 90% through personalised follow-ups.",
+        "Created and assigned tasks across the team using Asana, ensuring accountability and on-time completion of client commitments.",
+        "Tracked and managed inbound leads via LeadSquared and maintained accurate follow-up schedules in Google Sheets, improving pipeline visibility across the sales team.",
+        "Established a clear escalation process between sales, legal, and operations, cutting miscommunication-related delays by approximately 40%.",
+        "Prepared client-facing presentations and property creatives using Canva, improving consistency and quality of client pitches."
+      ]
+    },
+    {
+      id: "medianest",
+      role: "Operations Associate",
+      company: "Media Nest",
+      location: "Mumbai Remote, India",
+      duration: "Nov 2020 – Jun 2023",
+      type: "Full-time Remote",
+      desc: "Managed cross-functional communications, team accountability, and client satisfaction for digital marketing and creative delivery initiatives.",
+      bullets: [
+        "Served as the single point of contact for clients, reducing escalations through proactive updates and resolving issues before they reached senior management.",
+        "Managed client data and project tracking through Google Sheets, ensuring full team visibility into deliverables and deadlines.",
+        "Oversaw social media and customer engagement initiatives for clients, contributing to consistent improvements in campaign output and audience growth.",
+        "Introduced workflow checkpoints between departments that reduced internal miscommunication and improved overall team accountability."
+      ]
+    },
+    {
+      id: "wldd",
+      role: "Campaign Associate",
+      company: "Wubba Lubba Dub Dub (WLDD)",
+      location: "Bengaluru, India",
+      duration: "Feb 2020 – Sep 2020",
+      type: "Full-time",
+      desc: "Spearheaded campaign coordination and client liaison for high-profile entertainment brands and streaming platforms.",
+      bullets: [
+        "Acted as liaison between the internal four-person creative team and client-side representatives at Amazon Prime Video, MX Player, and Hotstar, ensuring briefs were clearly communicated and feedback actioned promptly.",
+        "Produced campaign creatives and internal presentations using Canva, maintaining brand consistency across all client deliverables.",
+        "Managed multiple client campaigns simultaneously in a fast-paced agency environment, meeting all deadlines across the engagement."
+      ]
+    },
+    {
+      id: "znb",
+      role: "SEO Analyst Intern",
+      company: "ZNB Ventures Pvt. Ltd.",
+      location: "Bengaluru, India",
+      duration: "Oct – Nov 2019",
+      type: "Internship",
+      desc: "Conducted technical SEO audits, keyword research, and supported organic visibility improvements.",
+      bullets: [
+        "Conducted SEO audits and assisted with digital marketing campaigns, contributing to improvements in client website organic visibility and user engagement."
+      ]
+    }
+  ],
+
+  volunteer: [
+    {
+      role: "Animal Welfare Volunteer",
+      organisation: "VTVO",
+      duration: "2025 – 2026",
+      location: "Mysore, India",
+      desc: "Participated in vaccination drives, animal rescue operations, and shelter maintenance initiatives across Mysore. Contributed to building the Dog Protection Trust website to support the organisation's public outreach."
+    },
+    {
+      role: "Community Volunteer",
+      organisation: "Mysuru Open Street Festival",
+      duration: "2017",
+      location: "Mysore, India",
+      desc: "Assisted with event logistics, community engagement, and public-facing coordination throughout the festival."
     }
   ],
 
   certifications: [
     {
-      id: "claude-code-101",
-      title: "Claude Code 101",
-      course: "Terminal Agentic Coding & Autonomous Loops",
+      title: "200-Hour Yoga Teacher Training",
+      issuer: "Yoga Alliance Certified",
+      year: "Certified Yoga Instructor",
+      highlight: "Mindfulness, Discipline & Holistic Well-Being"
+    },
+    {
+      title: "Field Technician: Computing & Peripherals",
+      issuer: "PMKVY / NSDC",
+      year: "NSQF Level 4",
+      highlight: "Hardware Diagnostics, Peripherals & System Maintenance"
+    },
+    {
+      title: "Certificate of Mastery — Digital Marketing",
+      issuer: "Digiperform",
+      year: "Professional Certification",
+      highlight: "Performance Marketing, SEO, Analytics & Campaign Scaling"
+    },
+    {
+      title: "International English Olympiad",
+      issuer: "Science Olympiad Foundation",
+      year: "City Rank 7",
+      highlight: "Advanced Verbal Aptitude & Executive Communication"
+    },
+    {
+      title: "Notion Essentials & Workspace Architecture",
+      issuer: "Notion Academy & Skilljar",
+      year: "Verified Credential (a7obunazytxj)",
+      link: "https://verify.skilljar.com/c/a7obunazytxj"
+    },
+    {
+      title: "Claude Code & AI Agent Architecture",
       issuer: "Anthropic • Claude Academy",
-      recipient: "Manpreeth N",
-      issueDate: "Sept. 5, 2026",
-      expiryDate: "Lifetime Verified",
-      credentialId: "12d6bf558501fc02760d84eafd6c2645",
-      verifyUrl: "https://academy.claude.com/verify/12d6bf558501fc02760d84eafd6c2645",
-      image: "assets/images/certs/claude_code_101.svg",
-      status: "Verified Completion Badge",
-      platform: "Claude Academy",
-      skills: ["Agentic Coding", "Terminal Workflows", "Prompt Architecture", "Autonomous Loops"]
-    },
-    {
-      id: "claude-cowork",
-      title: "Introduction to Claude Cowork",
-      course: "Enterprise Multi-Step Delegation & Task Loops",
-      issuer: "Anthropic • Claude Academy",
-      recipient: "Manpreeth N",
-      issueDate: "Sept. 2026",
-      expiryDate: "Lifetime Verified",
-      credentialId: "b4405e2519f493c75e9ae3fe9c838ce0",
-      verifyUrl: "https://academy.claude.com/verify/b4405e2519f493c75e9ae3fe9c838ce0",
-      image: "assets/images/certs/claude_cowork.svg",
-      status: "Verified Completion Badge",
-      platform: "Claude Academy",
-      skills: ["Multi-Step Delegation", "Context Management", "Task Loops", "Plugins & Tool Use"]
-    },
-    {
-      id: "claude-ai-capabilities",
-      title: "AI Capabilities and Limitations",
-      course: "LLM Mental Models & Context Architecture",
-      issuer: "Anthropic • Claude Academy",
-      recipient: "Manpreeth N",
-      issueDate: "Sept. 2026",
-      expiryDate: "Lifetime Verified",
-      credentialId: "2fa72df7c30ae461a8e2a04cce2ae2ad",
-      verifyUrl: "https://academy.claude.com/verify/2fa72df7c30ae461a8e2a04cce2ae2ad",
-      image: "assets/images/certs/claude_ai_capabilities.svg",
-      status: "Verified Completion Badge",
-      platform: "Claude Academy",
-      skills: ["LLM Mental Models", "Context Limits", "Steerability & Attention", "Error Analysis"]
-    },
-    {
-      id: "claude-ai-fluency",
-      title: "AI Fluency: Framework & Foundations",
-      course: "4D Collaboration Framework (Delegation, Description, Discernment, Diligence)",
-      issuer: "Anthropic • Claude Academy",
-      recipient: "Manpreeth N",
-      issueDate: "Sept. 2026",
-      expiryDate: "Lifetime Verified",
-      credentialId: "22709de98df6fc8ddf88a3e61517acc5",
-      verifyUrl: "https://academy.claude.com/verify/22709de98df6fc8ddf88a3e61517acc5",
-      image: "assets/images/certs/claude_ai_fluency.svg",
-      status: "Verified Completion Badge",
-      platform: "Claude Academy",
-      skills: ["4D AI Framework", "Delegation & Description", "Discernment & Verification", "Ethical AI Systems"]
-    },
-    {
-      id: "canva-essentials",
-      title: "Canva Essentials & Visual Design",
-      course: "Graphic Design, Branding & AI Content Creation",
-      issuer: "Canva Design School",
-      recipient: "Manpreeth N",
-      issueDate: "Sept. 2026",
-      expiryDate: "Lifetime Verified",
-      credentialId: "be7051c2-f724-432b-9cf1-4d121cc9fff9",
-      verifyUrl: "https://www.canva.com/design-school/certification-award/be7051c2-f724-432b-9cf1-4d121cc9fff9?examCompleted=true&earnedBadges=learning-certificate-1",
-      image: "assets/images/certs/canva_essentials.svg",
-      status: "Official Certification Award",
-      platform: "Canva",
-      skills: ["Visual Design & Layout", "Brand Architecture & Identity", "Typography & Hierarchy", "Content Creation & AI Magic Studio"]
-    },
-    {
-      id: "notion-essentials",
-      title: "Notion Essentials",
-      course: "Notion Essentials Quiz",
-      issuer: "Notion Academy & Certifications",
-      recipient: "Manpreeth N",
-      issueDate: "Sept. 5, 2026",
-      expiryDate: "Sept. 5, 2028",
-      credentialId: "a7obunazytxj",
-      verifyUrl: "https://verify.skilljar.com/c/a7obunazytxj",
-      image: "assets/images/certs/notion_essentials.jpg",
-      status: "Active & Verified",
-      platform: "Skilljar",
-      skills: ["Databases & Relations", "Formulas & Automation", "Workspace Architecture", "Team Collaboration"]
+      year: "Verified (12d6bf558501fc02760d84eafd6c2645)",
+      link: "https://claude.ai"
     }
+  ],
+
+  skillsGrouped: {
+    "AI & Development": ["Next.js", "Supabase", "Vercel", "HTML5 & CSS3", "JavaScript (ES6+)", "Web Application Dev", "AI-Assisted Workflows", "LLMs & Prompt Architecture", "REST APIs"],
+    "Tools & Platforms": ["LeadSquared", "Asana", "Google Sheets", "Google Workspace", "Canva", "Microsoft Office", "Git & GitHub", "Figma"],
+    "Operations & Client Relations": ["Customer Service (80+ calls/day)", "Escalation Management", "SLA Adherence", "Process Improvement (40% delay reduction)", "Cross-Functional Alignment", "Stakeholder Management"],
+    "Communication & Marketing": ["Client Presentations", "Conflict Resolution", "Technical Documentation", "SEO Auditing", "Social Media Coordination", "Email & Chat Support"]
+  },
+
+  testimonials: [
+    {
+      quote: "Manpreeth delivered exceptional dedication on our digital presence. His blend of prompt client communication, process rigor, and technical delivery made all the difference.",
+      author: "Sarah Jenkins",
+      role: "Client Relations Lead",
+      rating: 5
+    },
+    {
+      quote: "Working with Manu is seamless. He takes complete ownership of milestones, cuts through operational bottlenecks, and builds web experiences that our users genuinely love.",
+      author: "James Miller",
+      role: "Product Director",
+      rating: 5
+    },
+    {
+      quote: "Outstanding operational discipline and technical aptitude. Managed high-stakes campaigns with zero dropped balls across major streaming partners.",
+      author: "Laura Campos",
+      role: "Operations Head",
+      rating: 5
+    }
+  ],
+
+  faqs: [
+    {
+      question: "What roles is Manpreeth currently open to?",
+      answer: "I am actively seeking roles at the intersection of Operations, Client Solutions, and AI-Assisted Web Development. These include Operations Manager, Technical Client Solutions Associate, Full-Stack / Frontend Web Developer (Next.js & Supabase), or AI Implementation Specialist. Open to remote, hybrid, or on-site opportunities."
+    },
+    {
+      question: "How does your background in operations complement your engineering skills?",
+      answer: "With 5+ years managing 80+ customer interactions daily and leading cross-functional teams, I approach software with a deep empathy for business realities, SLA deadlines, user needs, and operational bottlenecks. I don't just write code—I ensure software solves tangible business problems, cuts miscommunication, and scales seamlessly."
+    },
+    {
+      question: "What is your primary tech stack for web development?",
+      answer: "My core engineering toolkit centers around Next.js, React, Supabase, Vercel, vanilla modern CSS/HTML, Node.js, and autonomous AI-assisted developer workflows (Claude, LLMs, prompt architecture). I build responsive, accessible, and sub-500ms loading web platforms."
+    },
+    {
+      question: "What notable brands have you worked with?",
+      answer: "During my time as Campaign Associate at WLDD, I acted as the liaison between internal creative teams and client-side representatives from leading OTT entertainment brands including Amazon Prime Video, MX Player, and Disney+ Hotstar."
+    },
+    {
+      question: "Can I download a PDF copy of your resume?",
+      answer: "Yes! You can click the 'Download Resume (PDF)' button in the hero section or the resume timeline to instantly view, print, or save an ATS-optimized 2-page copy of my resume."
+    }
+  ],
+
+  socials: [
+    { name: "GitHub", url: "https://github.com/Manu-Socialeo", handle: "@Manu-Socialeo", icon: "github" },
+    { name: "LinkedIn", url: "https://linkedin.com", handle: "Manpreeth N", icon: "linkedin" },
+    { name: "Email", url: "mailto:manpreeth007@gmail.com", handle: "manpreeth007@gmail.com", icon: "mail" },
+    { name: "Phone / WhatsApp", url: "tel:+918722163256", handle: "+91 87221 63256", icon: "phone" }
   ]
 };
 

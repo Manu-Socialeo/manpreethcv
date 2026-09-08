@@ -1,394 +1,266 @@
 /**
- * MANPREETH N (MANU) — RESUME & PORTFOLIO CONTROLLER
- * Full interactive controller for the Scandinavian-inspired layout, Menu Dropdown,
- * Theme toggling, Tab routing, Experience timeline, and Certifications registry.
+ * NORDEN PORTFOLIO & RESUME INTERACTIVITY
+ * Engineered for Manpreeth N
  */
 
-(function() {
-  'use strict';
+document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
+  initMenu();
+  initFaq();
+  initProjectModals();
+  initPrintResume();
+  initSmoothScroll();
+});
 
-  // --- STATE ---
-  const state = {
-    theme: localStorage.getItem('manuresume-theme') || 'light',
-    currentTab: 'home',
-    slideIndex: 0,
-    slides: [
-      { 
-        img: 'assets/images/work_hanssen.webp', 
-        badge: 'Socialeo • AI Suite & OpenSEO',
-        tab: 'project-socialeo'
-      },
-      { 
-        img: 'assets/images/work_fjord.webp', 
-        badge: 'Yoga With Srinatha • EdTech App',
-        tab: 'project-yoga'
-      },
-      { 
-        img: 'assets/images/work_ayano.webp', 
-        badge: 'OmniRoute • Multi-Model AI Gateway',
-        tab: 'home'
-      },
-      { 
-        img: 'assets/images/work_qitchen.webp', 
-        badge: 'VO2 Max • Athletic Studio Platform',
-        tab: 'home'
-      }
-    ]
-  };
+/* ==========================================================================
+   1. THEME MANAGEMENT (Light / Dark Mode with Persistence)
+   ========================================================================== */
+function initTheme() {
+  const html = document.documentElement;
+  const themeToggle = document.getElementById('theme-toggle');
+  const favicon = document.getElementById('dynamic-favicon');
 
-  // --- DOM ELEMENTS ---
-  const htmlEl = document.documentElement;
-  const themeToggleBtn = document.getElementById('theme-toggle-btn');
-  const dropdownThemeToggle = document.getElementById('dropdown-theme-toggle');
-  const menuDropdownOverlay = document.getElementById('menu-dropdown-overlay');
-  const menuDropdownToggle = document.getElementById('menu-dropdown-toggle');
-  const menuDropdownClose = document.getElementById('menu-dropdown-close');
-  const websiteToast = document.getElementById('website-toast');
-  const heroSliderImg = document.getElementById('hero-slider-img');
-  const heroBadgeLabel = document.getElementById('hero-badge-label');
-  const sliderDotsBar = document.getElementById('slider-dots-bar');
-  const certListContainer = document.getElementById('cert-list-container');
-  const certPreviewImg = document.getElementById('cert-preview-img');
-  const certBadgeLabel = document.getElementById('cert-badge-label');
-  const certCountText = document.getElementById('cert-count-text');
-  const experienceListContainer = document.getElementById('experience-list-container');
+  // Check saved theme or system preference
+  const savedTheme = localStorage.getItem('manuresume-theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const currentTheme = savedTheme || (prefersDark ? 'dark' : 'light');
 
-  // --- THEME MANAGEMENT ---
-  function applyTheme(theme) {
-    state.theme = theme;
-    htmlEl.setAttribute('data-theme', theme);
+  setTheme(currentTheme);
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const nextTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      setTheme(nextTheme);
+    });
+  }
+
+  function setTheme(theme) {
+    html.setAttribute('data-theme', theme);
     localStorage.setItem('manuresume-theme', theme);
-
-    const faviconEl = document.getElementById('dynamic-favicon');
-    if (faviconEl) {
-      faviconEl.href = theme === 'dark' 
+    
+    // Dynamic Favicon sync
+    if (favicon) {
+      favicon.href = theme === 'dark' 
         ? 'assets/images/favicon_dark.webp' 
         : 'assets/images/favicon_light.webp';
     }
   }
+}
 
-  function toggleTheme() {
-    const nextTheme = state.theme === 'light' ? 'dark' : 'light';
-    applyTheme(nextTheme);
-    showToast(`Switched to ${nextTheme.toUpperCase()} mode`);
-  }
+/* ==========================================================================
+   2. SIGNATURE NORDEN MENU DROPDOWN
+   ========================================================================== */
+function initMenu() {
+  const menuBtn = document.getElementById('menu-toggle-btn');
+  const menuBtnText = document.getElementById('menu-btn-text');
+  const dropdown = document.getElementById('menu-dropdown');
+  const menuLinks = document.querySelectorAll('.menu-card');
 
-  if (themeToggleBtn) themeToggleBtn.addEventListener('click', toggleTheme);
-  if (dropdownThemeToggle) dropdownThemeToggle.addEventListener('click', toggleTheme);
+  if (!menuBtn || !dropdown) return;
 
-  // --- TOAST NOTIFICATIONS ---
-  function showToast(msg) {
-    if (!websiteToast) return;
-    websiteToast.textContent = msg;
-    websiteToast.classList.add('show');
-    setTimeout(() => {
-      websiteToast.classList.remove('show');
-    }, 3000);
-  }
+  menuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
+  });
 
-  // --- MENU DROPDOWN CONTROLLER ---
-  function openMenuDropdown() {
-    if (menuDropdownOverlay) {
-      menuDropdownOverlay.classList.add('open');
+  function toggleMenu(forceClose = false) {
+    const isActive = forceClose ? false : !dropdown.classList.contains('active');
+    
+    if (isActive) {
+      dropdown.classList.add('active');
+      menuBtn.setAttribute('aria-expanded', 'true');
+      if (menuBtnText) menuBtnText.textContent = 'Close';
+    } else {
+      dropdown.classList.remove('active');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      if (menuBtnText) menuBtnText.textContent = 'Menu';
     }
   }
 
-  function closeMenuDropdown() {
-    if (menuDropdownOverlay) {
-      menuDropdownOverlay.classList.remove('open');
-    }
-  }
+  // Close menu on navigation click
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      toggleMenu(true);
+    });
+  });
 
-  function toggleMenuDropdown(e) {
-    if (e) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-    if (menuDropdownOverlay) {
-      const isOpen = menuDropdownOverlay.classList.contains('open');
-      if (isOpen) {
-        closeMenuDropdown();
-      } else {
-        openMenuDropdown();
-      }
-    }
-  }
-
-  if (menuDropdownToggle) {
-    menuDropdownToggle.onclick = toggleMenuDropdown;
-  }
-
-  if (menuDropdownClose) {
-    menuDropdownClose.onclick = function(e) {
-      if (e) {
-        e.preventDefault();
-        e.stopPropagation();
-      }
-      closeMenuDropdown();
-    };
-  }
-
-  // Close dropdown when clicking outside
+  // Close menu when clicking outside
   document.addEventListener('click', (e) => {
-    if (menuDropdownOverlay && menuDropdownOverlay.classList.contains('open')) {
-      const isClickInside = menuDropdownOverlay.contains(e.target);
-      const isClickToggle = menuDropdownToggle && (menuDropdownToggle === e.target || menuDropdownToggle.contains(e.target));
-      if (!isClickInside && !isClickToggle) {
-        closeMenuDropdown();
-      }
+    if (dropdown.classList.contains('active') && !dropdown.contains(e.target) && !menuBtn.contains(e.target)) {
+      toggleMenu(true);
     }
   });
 
-  // Close on ESC key
+  // Close on Escape key
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeMenuDropdown();
-  });
-
-  // --- TAB ROUTING ---
-  function switchTab(tabId) {
-    state.currentTab = tabId;
-
-    // Switch view containers
-    document.querySelectorAll('.website-view-tab').forEach(tab => {
-      tab.classList.remove('active');
-    });
-
-    const targetTab = document.getElementById(`tab-${tabId}`);
-    if (targetTab) {
-      targetTab.classList.add('active');
+    if (e.key === 'Escape' && dropdown.classList.contains('active')) {
+      toggleMenu(true);
     }
+  });
+}
 
-    // Update active nav links
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      if (link.getAttribute('data-tab') === tabId) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
-    });
+/* ==========================================================================
+   3. INTERACTIVE FAQ ACCORDION
+   ========================================================================== */
+function initFaq() {
+  const faqItems = document.querySelectorAll('.faq-item');
 
-    // Update active dropdown items
-    document.querySelectorAll('.menu-dropdown-item').forEach(item => {
-      if (item.getAttribute('data-tab') === tabId) {
+  faqItems.forEach(item => {
+    const questionBtn = item.querySelector('.faq-question');
+    const icon = item.querySelector('.faq-icon');
+
+    if (!questionBtn) return;
+
+    questionBtn.addEventListener('click', () => {
+      const isCurrentlyActive = item.classList.contains('active');
+
+      // Close other accordion items for clean accordion behavior
+      faqItems.forEach(otherItem => {
+        otherItem.classList.remove('active');
+        const otherBtn = otherItem.querySelector('.faq-question');
+        const otherIcon = otherItem.querySelector('.faq-icon');
+        if (otherBtn) otherBtn.setAttribute('aria-expanded', 'false');
+        if (otherIcon) otherIcon.textContent = '+';
+      });
+
+      if (!isCurrentlyActive) {
         item.classList.add('active');
-      } else {
-        item.classList.remove('active');
+        questionBtn.setAttribute('aria-expanded', 'true');
+        if (icon) icon.textContent = '−';
       }
     });
+  });
+}
 
-    // Close dropdown on navigation
-    closeMenuDropdown();
+/* ==========================================================================
+   4. PROJECT MODALS / DEEP-DIVE CASE STUDIES
+   ========================================================================== */
+function initProjectModals() {
+  const projectCards = document.querySelectorAll('.project-card');
+  const modal = document.getElementById('project-modal');
+  const modalSlot = document.getElementById('modal-content-slot');
+  const modalCloseBtn = document.getElementById('modal-close-btn');
 
-    // Smoothly scroll window
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (!modal || !modalSlot) return;
+
+  projectCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const projectId = card.getAttribute('data-project-id');
+      const projectData = (typeof SITE_DATA !== 'undefined' && SITE_DATA.projects) 
+        ? SITE_DATA.projects.find(p => p.id === projectId) 
+        : null;
+
+      if (projectData) {
+        renderModalContent(projectData);
+        openModal();
+      }
+    });
+  });
+
+  if (modalCloseBtn) {
+    modalCloseBtn.addEventListener('click', closeModal);
   }
 
-  // Global click delegate for [data-tab]
-  document.addEventListener('click', (e) => {
-    const tabTrigger = e.target.closest('[data-tab]');
-    if (tabTrigger) {
-      const tabName = tabTrigger.getAttribute('data-tab');
-      if (tabName) {
-        e.preventDefault();
-        switchTab(tabName);
-      }
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
     }
   });
 
-  // --- SLIDER CONTROLLER (Selected Projects) ---
-  function setSlide(index) {
-    state.slideIndex = index;
-    const cur = state.slides[index];
-    if (heroSliderImg && cur) {
-      heroSliderImg.style.opacity = '0.4';
-      setTimeout(() => {
-        heroSliderImg.src = cur.img;
-        heroSliderImg.style.opacity = '1';
-      }, 150);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal();
     }
-    if (heroBadgeLabel && cur) {
-      heroBadgeLabel.textContent = cur.badge;
-    }
+  });
 
-    if (sliderDotsBar) {
-      const dots = sliderDotsBar.querySelectorAll('.slider-dot');
-      dots.forEach((dot, idx) => {
-        dot.classList.toggle('active', idx === index);
-      });
-    }
+  function openModal() {
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
   }
 
-  const prevBtn = document.getElementById('slider-prev-btn');
-  const nextBtn = document.getElementById('slider-next-btn');
+  function closeModal() {
+    modal.classList.remove('active');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
 
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => {
-      const nextIdx = (state.slideIndex - 1 + state.slides.length) % state.slides.length;
-      setSlide(nextIdx);
+  function renderModalContent(p) {
+    modalSlot.innerHTML = `
+      <div style="margin-bottom: 16px;">
+        <span class="tag" style="margin-bottom: 8px; display: inline-block;">${p.category}</span>
+        <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--text-primary); margin-bottom: 4px;">${p.title}</h2>
+        <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">${p.duration}</span>
+      </div>
+
+      <div style="width: 100%; aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; margin-bottom: 18px; border: 1px solid var(--border-subtle);">
+        <img src="${p.image}" alt="${p.title}" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div style="margin-bottom: 18px;">
+        <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 6px;">Overview</h4>
+        <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55;">${p.summary}</p>
+      </div>
+
+      <div style="margin-bottom: 18px;">
+        <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">Key Contributions & Architecture</h4>
+        <ul style="list-style: disc; margin-left: 18px; font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+          ${p.highlights.map(h => `<li style="margin-bottom: 6px;">${h}</li>`).join('')}
+        </ul>
+      </div>
+
+      <div>
+        <h4 style="font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-bottom: 8px;">Technologies Deployed</h4>
+        <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+          ${p.tech.map(t => `<span class="tag">${t}</span>`).join('')}
+        </div>
+      </div>
+    `;
+  }
+}
+
+/* ==========================================================================
+   5. PRINT ATS RESUME TRIGGER
+   ========================================================================== */
+function initPrintResume() {
+  const printBtn = document.getElementById('btn-print-resume');
+  const heroResumeBtn = document.getElementById('btn-download-resume');
+
+  if (printBtn) {
+    printBtn.addEventListener('click', () => {
+      window.print();
     });
   }
 
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => {
-      const nextIdx = (state.slideIndex + 1) % state.slides.length;
-      setSlide(nextIdx);
-    });
-  }
-
-  if (sliderDotsBar) {
-    sliderDotsBar.addEventListener('click', (e) => {
-      const dot = e.target.closest('.slider-dot');
-      if (dot) {
-        const slideIdx = parseInt(dot.getAttribute('data-slide'), 10);
-        if (!isNaN(slideIdx)) setSlide(slideIdx);
+  if (heroResumeBtn) {
+    heroResumeBtn.addEventListener('click', (e) => {
+      // If user clicks on desktop, smooth scroll to experience section
+      // and offer print option
+      const expSec = document.getElementById('experience');
+      if (expSec) {
+        expSec.scrollIntoView({ behavior: 'smooth' });
       }
     });
   }
+}
 
-  // --- EXPERIENCE / RESUME TIMELINE RENDERER ---
-  function renderExperience() {
-    if (!experienceListContainer) return;
-
-    const experiences = (window.SITE_DATA && window.SITE_DATA.experience) || [];
-    experienceListContainer.innerHTML = '';
-
-    experiences.forEach((exp) => {
-      const card = document.createElement('div');
-      card.className = 'experience-item-card';
-
-      const highlightsHtml = (exp.highlights && exp.highlights.length > 0)
-        ? `<ul class="experience-highlights">
-            ${exp.highlights.map(h => `<li class="experience-highlight-item">${h}</li>`).join('')}
-          </ul>`
-        : '';
-
-      card.innerHTML = `
-        <div class="experience-top-row">
-          <div class="experience-role-group">
-            <h3>${exp.role}</h3>
-            <div class="experience-company-meta">
-              <span>${exp.company}</span> • <span>${exp.location}</span>
-            </div>
-          </div>
-          <span class="experience-duration-badge">${exp.duration}</span>
-        </div>
-
-        <p class="experience-desc">${exp.desc}</p>
-        ${highlightsHtml}
-      `;
-
-      experienceListContainer.appendChild(card);
+/* ==========================================================================
+   6. SMOOTH SCROLLING FOR IN-PAGE ANCHORS
+   ========================================================================== */
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const targetId = this.getAttribute('href');
+      if (targetId === '#' || targetId === '') return;
+      
+      const targetElem = document.querySelector(targetId);
+      if (targetElem) {
+        e.preventDefault();
+        targetElem.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
     });
-  }
-
-  // --- DYNAMIC CERTIFICATIONS RENDERER ---
-  function renderCertifications() {
-    if (!certListContainer) return;
-
-    const certs = (window.SITE_DATA && window.SITE_DATA.certifications) || [];
-
-    if (certCountText) {
-      certCountText.textContent = `${certs.length} Verified`;
-    }
-
-    certListContainer.innerHTML = '';
-
-    certs.forEach((cert, idx) => {
-      const card = document.createElement('div');
-      card.className = `cert-item-card ${idx === 0 ? 'selected' : ''}`;
-      card.setAttribute('data-cert-id', cert.id);
-
-      const skillsHtml = (cert.skills || []).map(skill => `<span class="cert-skill-tag">${skill}</span>`).join('');
-
-      const logoHtml = (cert.issuer.includes('Anthropic') || cert.issuer.includes('Claude'))
-        ? `<span style="color:#d47656; font-size:20px; font-weight:900; line-height:1;">✱</span>`
-        : (cert.issuer.includes('Canva')
-          ? `<span style="color:#00C4CC; font-size:20px; font-weight:900; font-style:italic; font-family:'DM Sans', sans-serif;">C</span>`
-          : (cert.issuer.includes('Notion') ? `<span style="font-weight:900; font-size:18px; font-family:'DM Sans', sans-serif;">N</span>` : '★'));
-
-      card.innerHTML = `
-        <div class="cert-item-top">
-          <div class="cert-issuer-group">
-            <div class="cert-issuer-logo">
-              ${logoHtml}
-            </div>
-            <div class="cert-titles">
-              <h3>${cert.title}</h3>
-              <p>${cert.issuer} • ${cert.course}</p>
-            </div>
-          </div>
-          <span class="cert-status-badge">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-            ${cert.status}
-          </span>
-        </div>
-
-        <div class="cert-skills-tags">
-          ${skillsHtml}
-        </div>
-
-        <div class="cert-meta-row">
-          <div class="cert-meta-item">
-            <strong>Issued:</strong> ${cert.issueDate}
-          </div>
-          <div class="cert-meta-item">
-            <strong>Valid Until:</strong> ${cert.expiryDate}
-          </div>
-          <div class="cert-meta-item">
-            <strong>Credential ID:</strong> ${cert.credentialId}
-          </div>
-        </div>
-
-        <div class="cert-actions-row">
-          <span style="font-size:11.5px; color:var(--text-secondary);">Recipient: <strong>${cert.recipient}</strong></span>
-          <a href="${cert.verifyUrl}" target="_blank" class="cert-verify-link">
-            <span>Verify on ${cert.platform}</span>
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-          </a>
-        </div>
-      `;
-
-      card.addEventListener('click', (e) => {
-        if (e.target.closest('a')) return;
-        document.querySelectorAll('.cert-item-card').forEach(c => c.classList.remove('selected'));
-        card.classList.add('selected');
-
-        if (certPreviewImg && cert.image) {
-          certPreviewImg.src = cert.image;
-        }
-        if (certBadgeLabel) {
-          certBadgeLabel.textContent = `${cert.title} • ${cert.platform}`;
-        }
-      });
-
-      certListContainer.appendChild(card);
-    });
-
-    // Set initial preview to first cert (Claude Code 101)
-    if (certs.length > 0 && certPreviewImg && certs[0].image) {
-      certPreviewImg.src = certs[0].image;
-    }
-    if (certs.length > 0 && certBadgeLabel) {
-      certBadgeLabel.textContent = `${certs[0].title} • ${certs[0].platform}`;
-    }
-  }
-
-  // --- CONTACT FORM HANDLER ---
-  const contactForm = document.getElementById('website-contact-form');
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const nameInput = document.getElementById('form-name');
-      const name = nameInput ? nameInput.value.trim() : 'Friend';
-      showToast(`Thank you, ${name}! Your inquiry has been sent to Manpreeth.`);
-      contactForm.reset();
-    });
-  }
-
-  // --- INITIALIZE ---
-  applyTheme(state.theme);
-  renderExperience();
-  renderCertifications();
-  setSlide(0);
-
-})();
+  });
+}
