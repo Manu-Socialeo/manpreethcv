@@ -32,8 +32,8 @@ Built for **Manpreeth (Founder at Socialeo)** — showcasing bespoke web applica
 ### Local Setup
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Manu-Socialeo/manuresume.git
-   cd manuresume
+   git clone https://github.com/Manu-Socialeo/manpreethcv.git
+   cd manpreethcv
    ```
 
 2. Start the local server:
