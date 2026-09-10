@@ -66,9 +66,10 @@ const SITE_DATA = {
       duration: "2025 – Present",
       image: "assets/images/work_hanssen.webp",
       tag: "Next.js • Supabase • Enterprise",
-      liveUrl: null,
+      liveUrl: "https://srinathayogaschoolex.vercel.app",
       githubUrl: null,
-      isPrivate: true,
+      notionUrl: "https://app.notion.com/p/Srinatha-Yoga-School-Integrated-Platform-3d7a90f3ed2281c69929c04722a24c53",
+      isPrivate: false,
       summary: "Designing and developing a full-stack platform integrating e-commerce, student authentication portal, recorded video library, and custom admin dashboard.",
       highlights: [
         "Built on Next.js and Supabase with cross-platform support across Android, iOS, and web.",
@@ -87,6 +88,7 @@ const SITE_DATA = {
       tag: "Next.js • Local SEO • Vercel",
       liveUrl: "https://vo2-max.vercel.app",
       githubUrl: "https://github.com/Manu-Socialeo/Vo2max",
+      notionUrl: "https://app.notion.com/p/VO2-Max-Wellness-Platform-3d7a90f3ed2281cca000c408ee4c2346",
       isPrivate: false,
       summary: "Designed and developed a high-converting wellness website for a Mysore-based fitness studio, elevating local search presence and lead generation.",
       highlights: [
@@ -105,6 +107,7 @@ const SITE_DATA = {
       tag: "Next.js • Autonomous AI • Vercel",
       liveUrl: "https://socialeo.vercel.app",
       githubUrl: "https://github.com/Manu-Socialeo/socialeo",
+      notionUrl: "https://app.notion.com/p/Socialeo-Digital-Agency-AI-Platform-3d7a90f3ed228149a4a1c9cf75c13e12",
       isPrivate: false,
       summary: "Modern agency web platform engineered for Mysore businesses, featuring automated lead capture pipelines, sub-second page loads, and AI workflow integrations.",
       highlights: [
@@ -123,6 +126,7 @@ const SITE_DATA = {
       tag: "Next.js • Mobile UX • Vercel",
       liveUrl: "https://naatinest.vercel.app",
       githubUrl: "https://github.com/Manu-Socialeo/Naati-Nest",
+      notionUrl: "https://app.notion.com/p/Naati-Nest-Web-Application-3d7a90f3ed2281a0b716e604ddb9869f",
       isPrivate: false,
       summary: "Interactive digital ordering and menu discovery webapp crafted for a prominent food truck brand in Mysore (Vijayanagar).",
       highlights: [
@@ -141,6 +145,7 @@ const SITE_DATA = {
       tag: "Healthcare • Local SEO • Vercel",
       liveUrl: "https://meritus-mys-25.vercel.app",
       githubUrl: "https://github.com/Manu-Socialeo/Meritus",
+      notionUrl: "https://app.notion.com/p/Meritus-Diagnostics-Platform-3d7a90f3ed2281e5989bcef03301b254",
       isPrivate: false,
       summary: "High-trust digital web platform for Meritus Diagnostics in Mysore Vijayanagar, designed for test catalog browsing and patient appointment booking.",
       highlights: [
@@ -159,6 +164,7 @@ const SITE_DATA = {
       tag: "VTVO Collaboration • Pro Bono",
       liveUrl: null,
       githubUrl: "https://github.com/Manu-Socialeo/DPT",
+      notionUrl: "https://app.notion.com/p/Dog-Protection-Trust-DPT-Platform-3d7a90f3ed228149a3dbd27535962bba",
       isPrivate: false,
       summary: "Led pro bono development of an animal welfare NGO platform in collaboration with VTVO, empowering independent outreach and donor engagement.",
       highlights: [
@@ -177,6 +183,7 @@ const SITE_DATA = {
       tag: "Retreat Booking • Next.js • Vercel",
       liveUrl: "https://shivaretreats.vercel.app",
       githubUrl: "https://github.com/Manu-Socialeo/Shivaretreats",
+      notionUrl: "https://app.notion.com/p/Shiva-Retreats-Booking-Platform-3d7a90f3ed2281daaa5ddb1badce6be1",
       isPrivate: false,
       summary: "Booking and showcase platform for 200hr/300hr Yoga Teacher Training and wellness retreats in Goa.",
       highlights: [
@@ -195,6 +202,7 @@ const SITE_DATA = {
       tag: "Adventure Tourism • Vercel",
       liveUrl: "https://trekandstay.vercel.app",
       githubUrl: "https://github.com/Manu-Socialeo/trekandstay",
+      notionUrl: "https://app.notion.com/p/Trek-Stay-Platform-3d7a90f3ed228124a794dff66299f15c",
       isPrivate: false,
       summary: "Discovery platform for Karnataka treks, Western Ghats trails, and Sahyadri homestays with itinerary exploration.",
       highlights: [
@@ -397,6 +405,7 @@ const SITE_DATA = {
   ],
 
   socials: [
+    { name: "Notion PRD Hub", url: "https://app.notion.com/p/3d7a90f3ed228045b233f86d5ea6b2f4", handle: "Engineering Hub", icon: "notion" },
     { name: "GitHub", url: "https://github.com/Manu-Socialeo", handle: "@Manu-Socialeo", icon: "github" },
     { name: "LinkedIn", url: "https://linkedin.com", handle: "Manpreeth N", icon: "linkedin" },
     { name: "Email", url: "mailto:manpreeth007@gmail.com", handle: "manpreeth007@gmail.com", icon: "mail" },

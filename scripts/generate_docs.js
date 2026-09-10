@@ -1,0 +1,86 @@
+const fs = require('fs');
+const path = require('path');
+const { PROJECTS } = require('./projects_data');
+
+const outDir = path.join(__dirname, '..', 'docs', 'projects');
+fs.mkdirSync(outDir, { recursive: true });
+
+for (const p of PROJECTS) {
+  const lines = [
+    `# ${p.title}`,
+    `> **${p.tagline}**`,
+    ``,
+    `| Specification | Details |`,
+    `| :--- | :--- |`,
+    `| **Role** | ${p.role} |`,
+    `| **Timeline** | ${p.timeline} |`,
+    `| **Category** | ${p.category} |`,
+    `| **Status** | ${p.status} |`,
+    `| **Live Link** | ${p.liveUrl ? `[${p.liveUrl}](${p.liveUrl})` : 'Private Client Deployment'} |`,
+    `| **Repository** | ${p.githubUrl ? `[${p.githubUrl}](${p.githubUrl})` : 'Private Client Repo'} |`,
+    `| **Core Stack** | ${p.techStack.join(' • ')} |`,
+    ``,
+    `---`,
+    ``,
+    `## 📖 Executive Summary & Impact`,
+    p.overview,
+    ``,
+    `---`,
+    ``,
+    `## 📄 1. Product Requirements Document (PRD)`,
+    ``,
+    `### 1.1 Problem Statement & Market Opportunity`,
+    p.prd.problem,
+    ``,
+    `### 1.2 Proposed Solution & Value Proposition`,
+    p.prd.solution,
+    ``,
+    `### 1.3 Target User Personas`,
+    ...p.prd.personas.map(persona => `- ${persona}`),
+    ``,
+    `### 1.4 Core Functional Features`,
+    ...p.prd.coreFeatures.map(feat => `- **${feat.split(':')[0]}**: ${feat.split(':').slice(1).join(':') || feat}`),
+    ``,
+    `---`,
+    ``,
+    `## 🛠️ 2. Technical Requirements Document (TRD)`,
+    ``,
+    `### 2.1 System Architecture`,
+    p.trd.architecture,
+    ``,
+    `### 2.2 Data Schema & State Management`,
+    p.trd.databaseSchema,
+    ``,
+    `### 2.3 API & Service Integration`,
+    p.trd.apiLayer,
+    ``,
+    `### 2.4 Security, Performance & Reliability Standards`,
+    p.trd.securityPerformance,
+    ``,
+    `---`,
+    ``,
+    `## 🎨 3. UI/UX Design System & Experience`,
+    ``,
+    `### 3.1 Design System & Aesthetic Direction`,
+    p.uxui.designSystem,
+    ``,
+    `### 3.2 Color Palette & Typography Hierarchy`,
+    p.uxui.colorPalette,
+    ``,
+    `### 3.3 Interactions & Micro-Animations`,
+    p.uxui.interactions,
+    ``,
+    `---`,
+    ``,
+    `## 🏆 Engineering Credits & Portfolio Highlights`,
+    `- **Architecture Ownership**: Full design, implementation, and deployment handled end-to-end.`,
+    `- **Live Verification**: Actively deployed and optimized for production traffic.`,
+    `- **Code Quality**: Built to modern standards with responsive performance and zero bloat.`,
+    ``,
+    `*Engineered by Manpreeth N — Operations & AI-Assisted Full-Stack Developer*`
+  ];
+
+  fs.writeFileSync(path.join(outDir, `${p.id}.md`), lines.join('\n'));
+}
+
+console.log(`Successfully generated ${PROJECTS.length} project documentation files in docs/projects/`);
