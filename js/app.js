@@ -144,7 +144,10 @@ function initProjectModals() {
   if (!modal || !modalSlot) return;
 
   projectCards.forEach(card => {
-    card.addEventListener('click', () => {
+    card.addEventListener('click', (e) => {
+      // If user clicked directly on an action link (Live / Code), don't trigger modal
+      if (e.target.closest('.project-action-link') || e.target.closest('a')) return;
+
       const projectId = card.getAttribute('data-project-id');
       const projectData = (typeof SITE_DATA !== 'undefined' && SITE_DATA.projects) 
         ? SITE_DATA.projects.find(p => p.id === projectId) 
@@ -186,11 +189,39 @@ function initProjectModals() {
   }
 
   function renderModalContent(p) {
+    const liveBtn = p.liveUrl 
+      ? `<a href="${p.liveUrl}" target="_blank" rel="noopener noreferrer" class="project-action-link live" style="padding: 8px 18px; font-size: 0.82rem;">
+          <span class="status-dot"></span>
+          <span>Visit Live App</span>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>`
+      : '';
+
+    const githubBtn = p.githubUrl 
+      ? `<a href="${p.githubUrl}" target="_blank" rel="noopener noreferrer" class="project-action-link code" style="padding: 8px 18px; font-size: 0.82rem;">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span>Source Code</span>
+        </a>`
+      : '';
+
+    const privatePill = p.isPrivate 
+      ? `<span class="project-private-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <span>Enterprise Platform • Case Study Only</span>
+        </span>`
+      : '';
+
     modalSlot.innerHTML = `
       <div style="margin-bottom: 16px;">
         <span class="tag" style="margin-bottom: 8px; display: inline-block;">${p.category}</span>
         <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--text-primary); margin-bottom: 4px;">${p.title}</h2>
         <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">${p.duration}</span>
+      </div>
+
+      <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px;">
+        ${liveBtn}
+        ${githubBtn}
+        ${privatePill}
       </div>
 
       <div style="width: 100%; aspect-ratio: 16/9; border-radius: 14px; overflow: hidden; margin-bottom: 18px; border: 1px solid var(--border-subtle);">

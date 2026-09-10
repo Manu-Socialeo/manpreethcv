@@ -65,23 +65,29 @@ const SITE_DATA = {
       category: "Full-Stack Web & Mobile App",
       duration: "2025 – Present",
       image: "assets/images/work_hanssen.webp",
-      tag: "Next.js • Supabase • Vercel",
+      tag: "Next.js • Supabase • Enterprise",
+      liveUrl: null,
+      githubUrl: null,
+      isPrivate: true,
       summary: "Designing and developing a full-stack platform integrating e-commerce, student authentication portal, recorded video library, and custom admin dashboard.",
       highlights: [
         "Built on Next.js and Supabase with cross-platform support across Android, iOS, and web.",
         "Empowers school to sell products and deliver online courses to students worldwide.",
         "Custom admin dashboard gives 100% visibility into student activity, orders, and content management without third-party fees."
       ],
-      tech: ["Next.js", "Supabase", "TypeScript", "TailwindCSS", "Vercel", "REST APIs"],
+      tech: ["Next.js", "Supabase", "TypeScript", "TailwindCSS", "REST APIs"],
       featured: true
     },
     {
       id: "vo2-max",
-      title: "VO2 Max Wellness Website",
+      title: "VO2 Max Wellness Platform",
       category: "Commercial Web Platform",
       duration: "2024 – Present",
       image: "assets/images/work_ayano.webp",
       tag: "Next.js • Local SEO • Vercel",
+      liveUrl: "https://vo2-max.vercel.app",
+      githubUrl: "https://github.com/Manu-Socialeo/Vo2max",
+      isPrivate: false,
       summary: "Designed and developed a high-converting wellness website for a Mysore-based fitness studio, elevating local search presence and lead generation.",
       highlights: [
         "Handled end-to-end delivery: UI design, responsive development, and continuous deployment on Vercel.",
@@ -91,12 +97,69 @@ const SITE_DATA = {
       featured: true
     },
     {
+      id: "socialeo-ai",
+      title: "Socialeo Digital Agency & AI Platform",
+      category: "AI Web Agency Platform",
+      duration: "2024 – Present",
+      image: "assets/images/work_fjord.webp",
+      tag: "Next.js • Autonomous AI • Vercel",
+      liveUrl: "https://socialeo.vercel.app",
+      githubUrl: "https://github.com/Manu-Socialeo/socialeo",
+      isPrivate: false,
+      summary: "Modern agency web platform engineered for Mysore businesses, featuring automated lead capture pipelines, sub-second page loads, and AI workflow integrations.",
+      highlights: [
+        "Constructed automated background agent routines reducing manual auditing and intake by hours.",
+        "Engineered sub-500ms First Contentful Paint web applications with 100% Core Web Vitals on Vercel."
+      ],
+      tech: ["Next.js", "Vercel", "Node.js", "Claude API", "Autonomous Agents"],
+      featured: true
+    },
+    {
+      id: "naati-nest",
+      title: "Naati Nest Web Application",
+      category: "Food & Hospitality Web Platform",
+      duration: "2024 – Present",
+      image: "assets/images/blog_1_trends.webp",
+      tag: "Next.js • Mobile UX • Vercel",
+      liveUrl: "https://naatinest.vercel.app",
+      githubUrl: "https://github.com/Manu-Socialeo/Naati-Nest",
+      isPrivate: false,
+      summary: "Interactive digital ordering and menu discovery webapp crafted for a prominent food truck brand in Mysore (Vijayanagar).",
+      highlights: [
+        "Created responsive digital menu and mobile-optimized ordering experience for foot-traffic customers.",
+        "Continuous CI/CD deployment on Vercel with instant load times on mobile 4G networks."
+      ],
+      tech: ["Next.js", "Vercel", "Mobile-First UX", "Responsive CSS"],
+      featured: true
+    },
+    {
+      id: "meritus",
+      title: "Meritus Diagnostics Platform",
+      category: "Healthcare & Diagnostic Center",
+      duration: "2024 – Present",
+      image: "assets/images/blog_2_ux.webp",
+      tag: "Healthcare • Local SEO • Vercel",
+      liveUrl: "https://meritus-mys-25.vercel.app",
+      githubUrl: "https://github.com/Manu-Socialeo/Meritus",
+      isPrivate: false,
+      summary: "High-trust digital web platform for Meritus Diagnostics in Mysore Vijayanagar, designed for test catalog browsing and patient appointment booking.",
+      highlights: [
+        "Structured local medical service discovery and streamlined patient appointment inquiries.",
+        "High-performance Vercel deployment with accessible healthcare information architecture."
+      ],
+      tech: ["React / Next.js", "Vercel", "Local SEO", "Appointment Funnels"],
+      featured: true
+    },
+    {
       id: "dog-protection-trust",
       title: "Dog Protection Trust (DPT) Platform",
       category: "NGO Public Outreach & Animal Welfare",
       duration: "2023",
       image: "assets/images/work_qitchen.webp",
       tag: "VTVO Collaboration • Pro Bono",
+      liveUrl: null,
+      githubUrl: "https://github.com/Manu-Socialeo/DPT",
+      isPrivate: false,
       summary: "Led pro bono development of an animal welfare NGO platform in collaboration with VTVO, empowering independent outreach and donor engagement.",
       highlights: [
         "Enabled the non-profit organisation to manage public outreach, rescue stories, and adoption campaigns independently.",
@@ -106,18 +169,39 @@ const SITE_DATA = {
       featured: true
     },
     {
-      id: "socialeo-ai",
-      title: "Socialeo AI Automation Engine",
-      category: "AI Agent Workflows & SEO Tools",
+      id: "shivaretreats",
+      title: "Shiva Retreats Booking Platform",
+      category: "Travel & Wellness Platform",
       duration: "2024 – Present",
-      image: "assets/images/work_fjord.webp",
-      tag: "Autonomous AI • Cron Agents",
-      summary: "Architected autonomous AI workflows, automated keyword clustering tools, and real-time site audit pipelines for modern agencies.",
+      image: "assets/images/blog_4_framer_webflow.webp",
+      tag: "Retreat Booking • Next.js • Vercel",
+      liveUrl: "https://shivaretreats.vercel.app",
+      githubUrl: "https://github.com/Manu-Socialeo/Shivaretreats",
+      isPrivate: false,
+      summary: "Booking and showcase platform for 200hr/300hr Yoga Teacher Training and wellness retreats in Goa.",
       highlights: [
-        "Constructed automated background agent routines reducing manual SEO auditing by hours.",
-        "Engineered sub-500ms First Contentful Paint web applications with 100% Core Web Vitals."
+        "Engineered immersive visual storytelling with course schedules and international student enrollment flow.",
+        "Hosted and optimized on Vercel edge network for worldwide student accessibility."
       ],
-      tech: ["Node.js", "Claude API", "Python", "Autonomous Agents", "Prompt Architecture"],
+      tech: ["Next.js", "Vercel", "Responsive Design", "Booking Funnels"],
+      featured: false
+    },
+    {
+      id: "trekandstay",
+      title: "Trek & Stay Platform",
+      category: "Eco-Tourism & Trekking Platform",
+      duration: "2024 – Present",
+      image: "assets/images/blog_5_responsive.webp",
+      tag: "Adventure Tourism • Vercel",
+      liveUrl: "https://trekandstay.vercel.app",
+      githubUrl: "https://github.com/Manu-Socialeo/trekandstay",
+      isPrivate: false,
+      summary: "Discovery platform for Karnataka treks, Western Ghats trails, and Sahyadri homestays with itinerary exploration.",
+      highlights: [
+        "Interactive trek itinerary viewer with gear checklists and weather guidelines.",
+        "Deployed continuously on Vercel with mobile-first trail navigation."
+      ],
+      tech: ["Next.js", "Vercel", "Tailwind CSS", "Interactive Maps"],
       featured: false
     }
   ],
