@@ -41,8 +41,8 @@ function initTheme() {
     // Dynamic Favicon sync
     if (favicon) {
       favicon.href = theme === 'dark' 
-        ? 'assets/images/favicon_dark.webp' 
-        : 'assets/images/favicon_light.webp';
+        ? 'assets/images/favicon_dark.svg' 
+        : 'assets/images/favicon_light.svg';
     }
   }
 }
